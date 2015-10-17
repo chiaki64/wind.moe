@@ -1,7 +1,6 @@
-@extends('main')
+@extends('sidebar')
 
 @section('content')
-<div class="am-g" style="width:75%">
     <div class="am-container am-u-lg-8 am-u-md-9">
         <div>
             <!--Breadcrumb-->
@@ -14,30 +13,6 @@
                 </li>
                 <li class="am-active">xxx</li>
             </ol>
-            <!--Text-->
-            <!--                    <div class="am-article">
-            <h1 class="am-text-center">
-                <a href="###" style="">我是标题</a></h1>
-            <h6 class="am-text-center" style="margin-top:-20px;color:#888;">Oct.15 2015</h6>
-
-
-
-            <div class="article-content">-->
-            <!-- am-text-truncate-->
-            <!--                            <p class="am-article-lead">我是导语</p>
-                <p>看著自己的作品，你的喜悅之情溢於言表，差點就要說出我要感謝我的父母之類的得獎感言。但在你對面的客戶先是一點表情也沒有，又瞬間轉為陰沉，抿了抿嘴角冷冷的說……</p>
-                <p>我是好多好多文字！</p>
-
-            </div>-->
-
-            <!--more-->
-            <!--
-<p class="am-text-center"><a href="###" class="am-text-lg">-More-</a>
-</p>
-</div>
--->
-
-            <!--                    <hr data-am-widget="divider" style="margin-top:-25px" class="am-divider am-divider-default" />-->
 
             <div style="margin-top:60px"></div>
             <div class="am-article">
@@ -126,134 +101,10 @@
         </div>
     </div>
 
-    <div class="am-u-lg-1 am-hide-md am-hide-md-down">
-        <p>
-        <p>
-        <p></p>
-        </p>
-        </p>
-    </div>
-
-    <div class="am-u-lg-3 am-u-md-3 am-container am-hide-sm-down">
-        <div style="margin:10px;"></div>
-        <div>
-            <input type="text" class="am-imput-group" placeholder="Keyword" style="border:1px solid #eee;">
-            <a href="" class="am-link-muted">>Search</a>
-        </div>
-
-        <div style="margin:45px;"></div>
-        <div>
-            <!--div块-->
-            <p>Note</p>
-            <hr data-am-widget="divider" style="" class="am-divider am-divider-default wind-divider" />
-            <div class="wind-offcanvas-div"></div>
-            <p>
-                欢迎访问我的小站~
-                <br> 欢迎访问我的小站~
-                <br> 欢迎访问我的小站~
-                <br>
-            </p>
-        </div>
-
-        <div style="height:150px;">
-            <!--div块-->
-            <p>一言API</p>
-            <hr data-am-widget="divider" style="" class="am-divider am-divider-default wind-divider" />
-            <div class="wind-offcanvas-div"></div>
-            <p>
-                高度固定以防不测
-            </p>
-        </div>
-
-        <div>
-            <!--div块-->
-            <p>Categories</p>
-            <hr data-am-widget="divider" style="" class="am-divider am-divider-default wind-divider" />
-            <div class="wind-offcanvas-div"></div>
-            <p>
-                <a href="" class="am-link-muted">我是目录一(num)</a>
-                <br>
-                <a href="" class="am-link-muted">我是目录二(num)</a>
-                <br>
-                <a href="" class="am-link-muted">我是目录三(num)</a>
-                <br>
-            </p>
-        </div>
-
-        <div>
-            <!--div块-->
-            <p>TimeLine/Random Article</p>
-            <hr data-am-widget="divider" style="" class="am-divider am-divider-default wind-divider" />
-            <div class="wind-offcanvas-div"></div>
-            <p>
-            <div>
-                <a href="" class="am-link-muted">文章名字</a>&nbsp;&nbsp;&nbsp;&nbsp;<small>Oct.15</small>
-            </div>
 
 
-            <div>
-                <a href="" class="am-link-muted">文章长名字</a> &nbsp;&nbsp;&nbsp;&nbsp;<small>Oct.15</small>
-            </div>
-
-            <div>
-                <a href="" class="am-link-muted">文章特长名字</a> &nbsp;&nbsp;&nbsp;&nbsp;<small>Oct.15</small>
-            </div>
-            </p>
-        </div>
-
-        <div>
-            <!--div块-->
-            <p>Tags</p>
-            <hr data-am-widget="divider" style="" class="am-divider am-divider-default wind-divider" />
-            <div class="wind-offcanvas-div"></div>
-            <p>
-                标签
-                <br>标签
-                <br>标签
-                <br>标签
-                <br>
-            </p>
-        </div>
-
-        <div style="height:150px;">
-            <!--div块-->
-            <p>Music Player</p>
-            <hr data-am-widget="divider" style="" class="am-divider am-divider-default wind-divider" />
-            <div class="wind-offcanvas-div"></div>
-            <p>
-                高度固定以防不测
-            </p>
-        </div>
-
-        <div style="height:150px;">
-            <!--div块-->
-            <p>Booklist</p>
-            <hr data-am-widget="divider" style="" class="am-divider am-divider-default wind-divider" />
-            <div class="wind-offcanvas-div"></div>
-            <p>
-                书名 <br>
-                书名 <br>
-                书名 <br>
-            </p>
-        </div>
-
-        <div style="height:150px;">
-            <!--div块-->
-            <p>Contact Me</p>
-            <hr data-am-widget="divider" style="" class="am-divider am-divider-default wind-divider" />
-            <div class="wind-offcanvas-div"></div>
-            <p>
-                <a href="" class="am-link-muted">i@wind.moe</a><br>
-                <a href="" class="am-link-muted">QQ</a><br>
-                <a href="" class="am-link-muted">Steam</a><br>
-            </p>
-        </div>
+    @yield('sidebar')
 
 
-
-
-    </div>
-
-</div>
 
 @stop

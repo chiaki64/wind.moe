@@ -52,8 +52,9 @@
 
         </div>
 
-
-        @yield('content')
+        <div class="am-g" style="width:75%">
+        @yield('sidebar')
+        </div>
 
         <!--top button-->
 

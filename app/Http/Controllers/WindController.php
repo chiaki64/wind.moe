@@ -21,6 +21,6 @@ class WindController extends Controller
     }
 
     public function links(){
-        return view('links');
+        return 'links page';
     }
 }
