@@ -11,11 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('article');
-});
+Route::get('/', 'ArticlesController@index');
 
 Route::get('/essay', 'WindController@essay');
 Route::get('/code', 'WindController@code');
 Route::get('/diary', 'WindController@diary');
 Route::get('/links', 'WindController@links');
+Route::get('/articles', 'ArticlesController@index');
+Route::get('/api/articles', 'ArticlesController@index_api');
+
+//article pages
+Route::get('/articles/{id}', 'ArticlesController@show');

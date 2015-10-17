@@ -9,15 +9,15 @@ use App\Http\Controllers\Controller;
 class WindController extends Controller
 {
     public function essay(){
-        return view('essay');
+        return view('articles.essay');
     }
 
     public function code(){
-        return view('code');
+        return view('articles.code');
     }
 
     public function diary(){
-        return view('diary');
+        return view('articles.diary');
     }
 
     public function links(){
