@@ -11,6 +11,9 @@ class Article extends Model
     protected $fillable = [
         'title',
         'text',
-        'published_at'
+        'author',
+        'category',
+        'tags',
+        'published_at',
     ];
 }
