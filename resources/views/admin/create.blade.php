@@ -2,7 +2,7 @@
 
 @section('sidebar')
 
-
+    <div class="am-container am-u-lg-8 am-u-md-9">
     <hr/>
 
     <form id="post-form" class="am-form" name="form" method="post" action="../articles">
@@ -43,7 +43,39 @@
             <p><button type="submit" class="am-btn am-btn-default">提交</button></p>
         </fieldset>
     </form>
+</div>
+    <div class="am-u-lg-3 am-u-md-3 am-container am-hide-sm-down">
+        <div style="margin:10px;"></div>
 
+
+        <div style="margin:45px;"></div>
+        <div>
+            <!--div块-->
+            <p>Note</p>
+            <hr data-am-widget="divider" style="" class="am-divider am-divider-default wind-divider" />
+            <div class="wind-offcanvas-div"></div>
+            <p>
+                欢迎访问我的小站~
+                <br> 欢迎访问我的小站~
+                <br> 欢迎访问我的小站~
+                <br>
+            </p>
+        </div>
+
+        <div style="height:150px;">
+            <!--div块-->
+            <p>一言API</p>
+            <hr data-am-widget="divider" style="" class="am-divider am-divider-default wind-divider" />
+            <div class="wind-offcanvas-div"></div>
+            <p>
+                高度固定以防不测
+            </p>
+        </div>
+
+
+
+
+    </div>
 
 
 
