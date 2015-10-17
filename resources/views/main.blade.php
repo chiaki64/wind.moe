@@ -22,6 +22,7 @@
     <!--link-->
     <link rel="stylesheet" href="https://wind.moe/wind.moe/r/css/amazeui.min.css">
     <link rel="stylesheet" href="https://wind.moe/wind.moe/r/css/app.css">
+    <link rel="stylesheet" href="https://wind.moe/wind.moe/r/css/simditor.css">
 
 </head>
 <body>
@@ -75,10 +76,14 @@
     </div>
 </div>
 
-<script src="https://wind.moe/wind.moe/r/js/jquery-2.1.4.min.js"></script>
-<script src="https://wind.moe/wind.moe/r/js/react.min.js"></script>
-<script src="https://wind.moe/wind.moe/r/js/amazeui.min.js"></script>
-<script src="https://wind.moe/wind.moe/r/js/wind.moe.js"></script>
+<script type="text/javascript" src="https://wind.moe/wind.moe/r/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="https://wind.moe/wind.moe/r/js/react.min.js"></script>
+<script type="text/javascript" src="https://wind.moe/wind.moe/r/js/amazeui.min.js"></script>
+<script type="text/javascript" src="https://wind.moe/wind.moe/r/js/module.js"></script>
+<script type="text/javascript" src="https://wind.moe/wind.moe/r/js/hotkeys.js"></script>
+<script type="text/javascript" src="https://wind.moe/wind.moe/r/js/uploader.js"></script>
+<script type="text/javascript" src="https://wind.moe/wind.moe/r/js/simditor.js"></script>
+<script type="text/javascript" src="https://wind.moe/wind.moe/r/js/wind.moe.js"></script>
 </body>
 
 </html>

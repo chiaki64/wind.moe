@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use App\Article;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 
-use Illuminate\Http\Request;
+use Request;
 class ArticlesController extends Controller
 {
     public function index_api(){
@@ -16,7 +17,8 @@ class ArticlesController extends Controller
     }
 
     public function index(){
-        $articles = Article::all();
+        //$articles = Article::all();
+        $articles = Article::latest('published_at')->get();
         return view('articles.article', compact('articles'));
         //或者也可以使用这种方式
         //return view('articles.index')->with('articles', $articles);
@@ -32,6 +34,20 @@ class ArticlesController extends Controller
         //$article = Article::findOrFail($id);
 
         return view('articles.show', compact('article'));
+    }
+
+    public function create(){
+        return view('admin.create');
+    }
+
+    public function store(){
+        $input = Request::all();
+        $input['published_at'] = Carbon::now();
+        $input['created_at'] = Carbon::now();
+        $input['updated_at'] = Carbon::now();
+        Article::create($input);
+
+        return $input;
     }
 
 }

@@ -20,5 +20,13 @@ Route::get('/links', 'WindController@links');
 Route::get('/articles', 'ArticlesController@index');
 Route::get('/api/articles', 'ArticlesController@index_api');
 
+//article create(顺序重要)
+Route::get('articles/create', 'ArticlesController@create');
+
 //article pages
 Route::get('/articles/{id}', 'ArticlesController@show');
+
+//post article
+Route::post('articles', 'ArticlesController@store');
+
+

@@ -5,13 +5,8 @@
         <div>
             <!--Breadcrumb-->
             <ol class="am-breadcrumb">
-                <li><a href="#">Essay</a>
+                <li><a href="#">Home</a>
                 </li>
-                <li><a href="#">Code</a>
-                </li>
-                <li><a href="#">Diary</a>
-                </li>
-                <li class="am-active">xxx</li>
             </ol>
 
             <div style="margin-top:60px"></div>
@@ -91,11 +86,11 @@
             @foreach($articles as $article)
             <div class="am-article">
                 <h3 class="am-article-title blog-title am-text-center">
-                    <a href="#" style="">{{ $article->title }}</a></h3>
+                    <a href="/articles/{{$article->id}}" style="">{{ $article->title }}</a></h3>
                 <h4 class="am-article-meta blog-meta am-text-center" style="margin-top:-10px;color:#888;">Oct.15 2015 under <a href="#">Diary</a></h4>
 
                 <div>
-                    <p>{{ $article->text }}</p>
+                    <p>{!! $article->text !!}</p>
                 </div>
 
                 <p class="am-text-center"><a href="###" class="am-text-lg">-More-</a>
