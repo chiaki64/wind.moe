@@ -1,20 +1,21 @@
-$(document).ready(function(){$.AMUI.progress.start()}),
-$(window).load(function(){$.AMUI.progress.done()});
+$(document).ready(function () {
+        $.AMUI.progress.start();
+    }),
+    $(window).load(function () {
+        $.AMUI.progress.done();
+        console.log("Ծ‸Ծ 哎呀被发现了呢~\n如果您看到了这行文字，那么请收下我最诚挚的祝福  @稗田千秋 - Oct.17 2015");
+
+});
 //Loading Progress
 
 
 //textedit
-var editor = new Simditor({   textarea: $('#editor') });
-
-//test
-//$(document).ready(function(){
-//    $('#post-form').ajaxForm(function() { 
-//                alert("Thank you for your comment!"); 
-//    });
-//});
+var editor = new Simditor({
+    textarea: $('#editor')
+});
 
 
-//将form转为AJAX提交
+//form -> AJAX
 function ajaxSubmit(updata, fn) {
     var dataPara = getFormJson(updata);
     $.ajax({
@@ -25,7 +26,7 @@ function ajaxSubmit(updata, fn) {
     });
 }
 
-//将form中的值转换为键值对。
+//form -> data
 function getFormJson(updata) {
     var o = {};
     var a = $(updata).serializeArray();
@@ -42,9 +43,9 @@ function getFormJson(updata) {
     return o;
 }
 
-$(document).ready(function(){
-    $('#post-form').bind('submit', function(){
-        ajaxSubmit(this, function(data){
+$(document).ready(function () {
+    $('#post-form').bind('submit', function () {
+        ajaxSubmit(this, function (data) {
             alert("success!");
         });
         return false;
