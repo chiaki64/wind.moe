@@ -1,5 +1,6 @@
 #banner {
-    background: #f5f5f5 url(../img/background.jpg) left top repeat;
+    background: #fbfbfb  left top repeat;
+/*    url(../img/background.jpg)*/
     overflow-y: hidden;
     padding: 10px 0;
 }
