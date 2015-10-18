@@ -54,7 +54,7 @@
         </div>
 
         <div class="am-g" style="width:75%">
-        @yield('sidebar')
+            @yield('sidebar')
         </div>
 
         <!--top button-->

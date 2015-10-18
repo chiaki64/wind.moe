@@ -25,6 +25,7 @@ Route::post('/articles', 'WindController@store');
 
 Route::get('/articles', 'WindController@index');
 Route::get('/api/articles', 'WindController@index_api');
+Route::get('/home', 'WindController@home');
 
 //article create(顺序重要)
 Route::get('articles/create', 'WindController@create');
@@ -39,6 +40,21 @@ Route::get('/articles/{id}', 'WindController@show');
 
 
 Route::resource('articles', 'WindController');
+
+Route::controllers([
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
+]);
+
+// 認證路由...
+Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::get('auth/logout', 'Auth\AuthController@getLogout');
+
+// 註冊路由...
+Route::get('auth/register', 'Auth\AuthController@getRegister');
+Route::post('auth/register', 'Auth\AuthController@postRegister');
+
 
 
 

@@ -64,9 +64,9 @@ class WindController extends Controller
 
     public function store(Request $request){
         $this->validate($request, ['title' => 'required|min:1', 'text' =>'required', 'category' => 'required']);
-        $request['created_at'] = Carbon::now();
-        $request['updated_at'] = Carbon::now();
-        $request['published_at'] = Carbon::now();
+        $request['created_at'] = Carbon::now('Asia/Shanghai');
+        $request['updated_at'] = Carbon::now('Asia/Shanghai');
+        $request['published_at'] = Carbon::now('Asia/Shanghai');
         Article::create($request->all());
         return redirect('articles');
     }
@@ -80,12 +80,14 @@ class WindController extends Controller
     //update
     public function update($id, Request $request){
         $article = Article::findOrFail($id);
-        $request['updated_at'] = Carbon::now('Asia/Shanghai ');
-        $request['published_at'] = Carbon::now();
+        $request['updated_at'] = Carbon::now('Asia/Shanghai');
+        $request['published_at'] = Carbon::now('Asia/Shanghai');
         $article->update($request->all());
         return redirect('articles');
     }
 
-
+    public function home(){
+        return redirect('/articles/create');
+    }
 
 }

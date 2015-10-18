@@ -36,4 +36,7 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+    protected $redirectPath = '/articles';
+    protected $loginPath = '/login';
 }
