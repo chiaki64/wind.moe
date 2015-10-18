@@ -70,4 +70,22 @@ class WindController extends Controller
         Article::create($request->all());
         return redirect('articles');
     }
+
+
+    public function edit($id){
+        $article = Article::findOrFail($id);
+        return view('admin.edit', compact('article'));
+    }
+
+    //update
+    public function update($id, Request $request){
+        $article = Article::findOrFail($id);
+        $request['updated_at'] = Carbon::now('Asia/Shanghai ');
+        $request['published_at'] = Carbon::now();
+        $article->update($request->all());
+        return redirect('articles');
+    }
+
+
+
 }

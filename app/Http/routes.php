@@ -22,6 +22,7 @@ Route::get('/links', 'WindController@links');
 Route::post('/articles', 'WindController@store');
 
 
+
 Route::get('/articles', 'WindController@index');
 Route::get('/api/articles', 'WindController@index_api');
 
@@ -33,6 +34,11 @@ Route::get('articles/daily', 'WindController@daily');
 
 //article pages
 Route::get('/articles/{id}', 'WindController@show');
+//edit article
+//Route::get('articles/{id}/edit', 'WindController@edit');
+
+
+Route::resource('articles', 'WindController');
 
 
 
