@@ -35,7 +35,7 @@
                 <select id="doc-select-1" name="category">
                     <option value="essay">Essay</option>
                     <option value="code">Code</option>
-                    <option value="diary">Diary</option>
+                    <option value="daily">Daily</option>
                 </select>
                 <span class="am-form-caret"></span>
             </div>

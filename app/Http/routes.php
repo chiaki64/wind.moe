@@ -15,13 +15,17 @@ Route::get('/', 'ArticlesController@index');
 
 Route::get('/essay', 'WindController@essay');
 Route::get('/code', 'WindController@code');
-Route::get('/diary', 'WindController@diary');
+Route::get('/daily', 'WindController@daily');
 Route::get('/links', 'WindController@links');
+
 Route::get('/articles', 'ArticlesController@index');
 Route::get('/api/articles', 'ArticlesController@index_api');
 
 //article create(顺序重要)
 Route::get('articles/create', 'ArticlesController@create');
+Route::get('articles/essay', 'ArticlesController@essay');
+Route::get('articles/code', 'ArticlesController@code');
+Route::get('articles/daily', 'ArticlesController@daily');
 
 //article pages
 Route::get('/articles/{id}', 'ArticlesController@show');

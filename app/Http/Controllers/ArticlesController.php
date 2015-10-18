@@ -24,6 +24,30 @@ class ArticlesController extends Controller
         //return view('articles.index')->with('articles', $articles);
     }
 
+    public function essay(){
+        //$articles = Article::all();
+        $articles = Article::latest('published_at')->get();
+        return view('articles.essay', compact('articles'));
+        //或者也可以使用这种方式
+        //return view('articles.index')->with('articles', $articles);
+    }
+
+    public function code(){
+        //$articles = Article::all();
+        $articles = Article::latest('published_at')->get();
+        return view('articles.code', compact('articles'));
+        //或者也可以使用这种方式
+        //return view('articles.index')->with('articles', $articles);
+    }
+
+    public function daily(){
+        //$articles = Article::all();
+        $articles = Article::latest('published_at')->get();
+        return view('articles.daily', compact('articles'));
+        //或者也可以使用这种方式
+        //return view('articles.index')->with('articles', $articles);
+    }
+
     public function show($id){
         $article = Article::find($id);
 

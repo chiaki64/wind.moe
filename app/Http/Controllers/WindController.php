@@ -16,8 +16,8 @@ class WindController extends Controller
         return view('articles.code');
     }
 
-    public function diary(){
-        return view('articles.diary');
+    public function daily(){
+        return view('articles.daily');
     }
 
     public function links(){
