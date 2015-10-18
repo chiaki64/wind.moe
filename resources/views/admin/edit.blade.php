@@ -44,9 +44,6 @@
             @endforeach
         </div>
     @endif
-    <script>
-            var a=document.getElementById("add_id");
-            a.getElementsByTagName("textarea").id="editor"
-    </script>
+
 
 @stop

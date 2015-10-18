@@ -17,6 +17,7 @@ class WindController extends Controller
 
     public function index(){
         //$articles = Article::all();
+//        return \Auth::user();
         $articles = Article::latest('published_at')->get();
         return view('articles.article', compact('articles'));
         //other way
@@ -51,6 +52,9 @@ class WindController extends Controller
     }
 
     public function create(){
+        if(\Auth::guest()){
+            return redirect('articles');
+        }
         return view('admin.create');
     }
 
@@ -71,8 +75,10 @@ class WindController extends Controller
         return redirect('articles');
     }
 
-
     public function edit($id){
+        if(\Auth::guest()){
+            return redirect('articles');
+        }
         $article = Article::findOrFail($id);
         return view('admin.edit', compact('article'));
     }
@@ -88,6 +94,11 @@ class WindController extends Controller
 
     public function home(){
         return redirect('/articles/create');
+    }
+
+    public function __construct(){
+        //只有发布页
+        $this->middleware('auth', ['only' => 'create']);
     }
 
 }
