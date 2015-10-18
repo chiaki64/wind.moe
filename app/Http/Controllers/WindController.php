@@ -51,6 +51,7 @@ class WindController extends Controller
         return view('articles.show', compact('article'));
     }
 
+
     public function create(){
         if(\Auth::guest()){
             return redirect('articles');
@@ -73,6 +74,9 @@ class WindController extends Controller
         $request['published_at'] = Carbon::now('Asia/Shanghai');
         Article::create($request->all());
         return redirect('articles');
+//        \Auth::user()->articles()->create($request->all());
+//        \Session::flash('flash_message', '文章发布成功');
+//        return redirect('articles');
     }
 
     public function edit($id){
