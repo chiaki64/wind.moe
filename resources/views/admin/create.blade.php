@@ -5,11 +5,11 @@
     <div class="am-container am-u-lg-8 am-u-md-9">
     <hr/>
 
-    <form id="post-form" class="am-form" name="form" method="post" action="../articles">
+    <form id="post-form" class="am-form" name="form" method="post" action="../articles" accept-charset="UTF-8">
 
         <fieldset>
             <legend>表单标题</legend>
-            <input name="_token" type="hidden" value="hD5M6jkA4DGkqoypbo1ZUhEK7qbcg0Myhk8C6pqA">
+            <input name="_token" type="hidden" value="OclWxL1wSZpndaN9ehiLx0L7rzE1RnANHzCEBQ08">
             <div class="am-form-group">
                 <label for="create-title">标题</label>
                 <input id="create-title" name="title" type="text" class="am-form-field am-radius" placeholder="Title" autofocus/>
@@ -31,14 +31,15 @@
             </div>
 
             <div class="am-form-group" style="width:40%">
-                <label for="doc-select-1">Category</label>
-                <select id="doc-select-1" name="category">
+                <label for="category-select">Category</label>
+                <select id="category-select" name="category">
                     <option value="essay">Essay</option>
                     <option value="code">Code</option>
                     <option value="daily">Daily</option>
                 </select>
                 <span class="am-form-caret"></span>
             </div>
+
 
             <p><button type="submit" class="am-btn am-btn-default">提交</button></p>
         </fieldset>
@@ -72,10 +73,11 @@
             </p>
         </div>
 
-
-
+        {!! Form::open() !!}
+        {!! Form::close() !!}
 
     </div>
+
 
 
 

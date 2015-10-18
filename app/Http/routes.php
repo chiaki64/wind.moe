@@ -11,26 +11,29 @@
 |
 */
 
-Route::get('/', 'ArticlesController@index');
+Route::get('/', 'WindController@index');
 
 Route::get('/essay', 'WindController@essay');
 Route::get('/code', 'WindController@code');
 Route::get('/daily', 'WindController@daily');
 Route::get('/links', 'WindController@links');
 
-Route::get('/articles', 'ArticlesController@index');
-Route::get('/api/articles', 'ArticlesController@index_api');
+//post article
+Route::post('/articles', 'WindController@store');
+
+
+Route::get('/articles', 'WindController@index');
+Route::get('/api/articles', 'WindController@index_api');
 
 //article create(顺序重要)
-Route::get('articles/create', 'ArticlesController@create');
-Route::get('articles/essay', 'ArticlesController@essay');
-Route::get('articles/code', 'ArticlesController@code');
-Route::get('articles/daily', 'ArticlesController@daily');
+Route::get('articles/create', 'WindController@create');
+Route::get('articles/essay', 'WindController@essay');
+Route::get('articles/code', 'WindController@code');
+Route::get('articles/daily', 'WindController@daily');
 
 //article pages
-Route::get('/articles/{id}', 'ArticlesController@show');
+Route::get('/articles/{id}', 'WindController@show');
 
-//post article
-Route::post('articles', 'ArticlesController@store');
+
 
 

@@ -14,6 +14,7 @@ class Article extends Model
         'author',
         'category',
         'tags',
+        'updated_at',
         'published_at',
     ];
 }

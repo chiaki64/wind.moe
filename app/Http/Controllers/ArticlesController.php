@@ -25,27 +25,19 @@ class ArticlesController extends Controller
     }
 
     public function essay(){
-        //$articles = Article::all();
         $articles = Article::latest('published_at')->get();
         return view('articles.essay', compact('articles'));
-        //或者也可以使用这种方式
-        //return view('articles.index')->with('articles', $articles);
     }
 
     public function code(){
-        //$articles = Article::all();
         $articles = Article::latest('published_at')->get();
         return view('articles.code', compact('articles'));
-        //或者也可以使用这种方式
-        //return view('articles.index')->with('articles', $articles);
     }
 
     public function daily(){
         //$articles = Article::all();
         $articles = Article::latest('published_at')->get();
         return view('articles.daily', compact('articles'));
-        //或者也可以使用这种方式
-        //return view('articles.index')->with('articles', $articles);
     }
 
     public function show($id){
@@ -56,7 +48,6 @@ class ArticlesController extends Controller
             abort(404);
         }
         //$article = Article::findOrFail($id);
-
         return view('articles.show', compact('article'));
     }
 
@@ -70,8 +61,7 @@ class ArticlesController extends Controller
         $input['created_at'] = Carbon::now();
         $input['updated_at'] = Carbon::now();
         Article::create($input);
-
-        return $input;
+        return redirect('articles');
     }
 
 }

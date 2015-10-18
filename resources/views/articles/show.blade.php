@@ -21,7 +21,7 @@
                     <h4 class="am-article-meta blog-meta am-text-center" style="margin-top:-10px;color:#888;">Oct.15 2015 under <a href="#">Diary</a></h4>
 
                     <div>
-                        <p>{{ $article->text }}</p>
+                        <p>{!!  $article->text !!}</p>
                     </div>
                 </div>
 

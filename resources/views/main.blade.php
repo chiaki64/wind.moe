@@ -39,11 +39,11 @@
                     <span style="color:#aaa">just a message~</span>
                     <br>
                         <span style="color:#aaa">
-                        <a href="/essay"  class="am-icon-file-text-o am-link-muted"> Essay</a>
+                        <a href="/articles/essay"  class="am-icon-file-text-o am-link-muted"> Essay</a>
                         &nbsp;|&nbsp;
-                        <a href="/code" class="am-icon-code am-link-muted"> Code</a>
+                        <a href="/articles/code" class="am-icon-code am-link-muted"> Code</a>
                         &nbsp;|&nbsp;
-                        <a href="/diary" class="am-icon-book am-link-muted"> Diary</a>
+                        <a href="/articles/diary" class="am-icon-book am-link-muted"> Diary</a>
                         &nbsp;|&nbsp;
                         <a href="/links" class="am-icon-link am-link-muted"> Links</a>
                         <!-- 触发侧边栏 -->
