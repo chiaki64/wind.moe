@@ -10,11 +10,74 @@ use Illuminate\Http\Request;
 
 class WindController extends Controller
 {
-    public function index_api(){
+    //获取所有文章
+    public function api_index(){
         $articles = Article::all();
         return $articles;
     }
 
+    //获取最大文章数
+    public function api_max_article_id(){
+        $id = Article::max('id');
+        return $id;
+    }
+    //获取单个文章
+    public function api_get_article($id){
+        if(Article::find($id)) {
+            $articles = Article::find($id);
+            return $articles;
+        }
+        else
+            return "no data";
+    }
+
+    //获取更多文章 Num:8 / tag:Article
+    public function api_get_more_article($id){
+        for($count=1,$sum=0;$count<=8 && $id>0 ;$count++,$id--){
+            $article[$count] = Article::find($id);
+
+            if(Article::find($id)!=null) //当不为空值时 $sum + 1  | $sum 的作用是判断剩下的文章是否加载完成
+                $sum++;
+        }
+        $article[0]=$sum;
+        return $article;
+    }
+
+    //获取更多对应标签文章  Num:8 / tag:$category
+    public function api_get_more_category_article($category,$id){
+        for($count=0;$count<8 && $id>0;$id--){
+            $articles = Article::find($id);
+            if($articles['category']==$category){
+                $article[$count]=$articles;
+                $count++;
+            }
+        }
+        if($count==0) {
+            $article[$count] = "no data";
+            return $article[$count];
+        }
+        else {
+            return $article;
+        }
+    }
+
+    //测试中api   请勿调用
+//    public function api_get_category_article($id,$category){
+//        $max = WindController::api_max_article_id();
+//        $articles = Article::all();
+//        foreach($articles as $article)
+//            if($article['category']=$category){
+//                $cat_article = $article;
+//            }
+//        endforeach
+//        return $cat_article;
+//    }
+
+
+
+    /**
+     * @return \Illuminate\View\View
+     */
     public function index(){
         //$articles = Article::all();
 //        return \Auth::user();

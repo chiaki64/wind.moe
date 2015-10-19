@@ -47,7 +47,11 @@ $(document).ready(function () {
     $('#post-form').bind('submit', function () {
         ajaxSubmit(this, function (data) {
             alert("success!");
+            parent.location.href="/articles"
         });
         return false;
     });
 });
+
+
+//Loading Article

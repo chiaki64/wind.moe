@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App;
+use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -49,7 +49,7 @@ class AuthController extends Controller
             'password' => 'required|confirmed|min:6',
         ]);
     }
-
+    //TYPECHO
     /**
      * Create a new user instance after a valid registration.
      *
@@ -64,8 +64,6 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
-
-
 
 
 }

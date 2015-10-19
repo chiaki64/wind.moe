@@ -12,22 +12,34 @@
 */
 
 Route::get('/', 'WindController@index');
-
-Route::get('/essay', 'WindController@essay');
-Route::get('/code', 'WindController@code');
-Route::get('/daily', 'WindController@daily');
-Route::get('/links', 'WindController@links');
+Route::get('/articles', 'WindController@index');
 
 //post article
 Route::post('/articles', 'WindController@store');
 
+//=========================================================================================
+// api_article
+Route::get('/api/articles', 'WindController@api_index');
+Route::get('/api/articles/max', 'WindController@api_max_article_id');
+Route::get('/api/articles/{id}', 'WindController@api_get_article');
+
+// api_more
+Route::get('/api/more/{id}', 'WindController@api_get_more_article');
+
+// api_category
+Route::get('/api/category/{category}/{id}', 'WindController@api_get_more_category_article');
+
+//=========================================================================================
 
 
-Route::get('/articles', 'WindController@index');
-Route::get('/api/articles', 'WindController@index_api');
+
+
+//article
+Route::get('/essay', 'WindController@essay');
+Route::get('/code', 'WindController@code');
+Route::get('/daily', 'WindController@daily');
+Route::get('/links', 'WindController@links');
 Route::get('/home', 'WindController@home');
-
-//article create(顺序重要)
 Route::get('articles/create', 'WindController@create');
 Route::get('articles/essay', 'WindController@essay');
 Route::get('articles/code', 'WindController@code');
@@ -38,25 +50,22 @@ Route::get('/articles/{id}', 'WindController@show');
 //edit article
 //Route::get('articles/{id}/edit', 'WindController@edit');
 
-
 Route::resource('articles', 'WindController');
 
-Route::controllers([
-    'auth' => 'Auth\AuthController',
-    'password' => 'Auth\PasswordController',
-]);
+//Route::controllers([
+//    'auth' => 'Auth\AuthController',
+//    'password' => 'Auth\PasswordController',
+//]);
 
-/*
-// 認證路由...
+// 认证路由
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
-
-// 註冊路由...
+// 注册路由
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
-*/
+
 
 
 

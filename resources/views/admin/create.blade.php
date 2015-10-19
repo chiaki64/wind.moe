@@ -9,7 +9,9 @@
 
         <fieldset>
             <legend>表单标题</legend>
-            <input name="_token" type="hidden" value="OclWxL1wSZpndaN9ehiLx0L7rzE1RnANHzCEBQ08">
+            {{--<input name="_token" type="hidden" value="OclWxL1wSZpndaN9ehiLx0L7rzE1RnANHzCEBQ08">--}}
+            {!! Form::open() !!}
+            {!! Form::close() !!}
             <div class="am-form-group">
                 <label for="create-title">标题</label>
                 <input id="create-title" name="title" type="text" class="am-form-field am-radius" placeholder="Title" autofocus/>
@@ -73,8 +75,7 @@
             </p>
         </div>
 
-        {!! Form::open() !!}
-        {!! Form::close() !!}
+
 
     </div>
 

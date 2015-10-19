@@ -28,8 +28,6 @@
 
 
 
-
-
         </div>
         <div style="margin-top:50px;">
             <p class="am-text-center"><a href="###" class="am-text-lg">-Load More Article-</a>
