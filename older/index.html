@@ -28,7 +28,7 @@
 
 <body>
     <div id="layout">
-        <div>
+
             <div id="banner" class="am-text-center am-vertical-align">
                 <div class="am-animation-fade am-vertical-align-middle">
                    <a href="#doc-oc-chiaki" data-am-offcanvas> <img src="./r/img/avatar.png" alt="avatar" id="avatar" class="am-radius am-center" style="margin-top:20px;;width:120px;height:120px;border-radius:50%;overflow:hidden;"></a>
@@ -71,8 +71,8 @@
     .am-article-divider 分隔线
     -->
             <div class="am-g" style="width:75%">
-                <div class="am-container am-u-lg-8 am-u-md-9">
-                    <div>
+                <div class="am-container am-u-lg-8 am-u-md-9" >
+                    <div id="add_more">
                         <!--Breadcrumb-->
                         <ol class="am-breadcrumb">
                             <li><a href="#">Essay</a>
@@ -161,6 +161,8 @@
 
                             <p class="am-text-center"><a href="###" class="am-text-lg">-More-</a>
                             </p>
+                            <hr data-am-widget="divider" style="" class="am-divider am-divider-default" />
+
                         </div>
 
                         <div class="am-article">
@@ -180,19 +182,23 @@
 
                             <p class="am-text-center"><a href="###" class="am-text-lg">-More-</a>
                             </p>
+<hr data-am-widget="divider" style="" class="am-divider am-divider-default" />
 
 
 
 
                         </div>
-
+ 
 
 
 
 
                     </div>
                     <div style="margin-top:50px;">
-                        <p class="am-text-center"><a href="###" class="am-text-lg">-Load More Article-</a>
+                        <p class="am-text-center" id="load_more"><a href="javascript:void(0)" class="am-text-lg" onclick="loadArticle()">-Load More Article-</a>
+                        </p>
+                        <p class="am-text-center"><a href="javascript:void(0)" class="am-text-lg" onclick="getArticleJson()">-getArticleJson-</a>
+                        </p>
                     </div>
                 </div>
 
@@ -393,7 +399,7 @@
 
                 </div>
             </footer>
-        </div>
+
     </div>
 
     <script src="./r/js/jquery-2.1.4.min.js"></script>

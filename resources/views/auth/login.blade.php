@@ -5,12 +5,12 @@
 
     <div>
         Email
-        <input type="email" name="email" value="">
+        <input type="hidden" name="email" value="i@wind.moe">
     </div>
 
     <div>
         Password
-        <input type="password" name="password" id="password">
+        <input type="hidden" name="password" id="password" value="Zhangzenan">
     </div>
 
     <div>

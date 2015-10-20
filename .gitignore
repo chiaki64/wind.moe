@@ -3,3 +3,6 @@
 Homestead.yaml
 Homestead.json
 .env
+auth.php
+secken.class.php
+wind.moe.js

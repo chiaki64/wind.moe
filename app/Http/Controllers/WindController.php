@@ -7,6 +7,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Symfony\Component\Console\Tests\Input\ArgvInputTest;
 
 class WindController extends Controller
 {
@@ -15,12 +16,29 @@ class WindController extends Controller
         $articles = Article::all();
         return $articles;
     }
+    //to_index
+    public function api_to_index(){
+        return redirect('');
+
+    }
 
     //获取最大文章数
     public function api_max_article_id(){
         $id = Article::max('id');
         return $id;
     }
+
+    //获取对应标签最大文章数
+    public function api_max_category_id($category){
+        $id = Article::max('id');
+        for(;$id>0;$id--){
+            $article = Article::find($id);
+            if($article['category']==$category)
+                return $id;
+        }
+    }
+
+
     //获取单个文章
     public function api_get_article($id){
         if(Article::find($id)) {
@@ -39,7 +57,7 @@ class WindController extends Controller
             if(Article::find($id)!=null) //当不为空值时 $sum + 1  | $sum 的作用是判断剩下的文章是否加载完成
                 $sum++;
         }
-        $article[0]=$sum;
+//        $article[0]=$sum;
         return $article;
     }
 
@@ -101,6 +119,10 @@ class WindController extends Controller
         //$articles = Article::all();
         $articles = Article::latest('published_at')->get();
         return view('articles.daily', compact('articles'));
+    }
+
+    public function links(){
+        return "links page";
     }
 
     public function show($id){

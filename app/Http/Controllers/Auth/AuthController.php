@@ -49,7 +49,7 @@ class AuthController extends Controller
             'password' => 'required|confirmed|min:6',
         ]);
     }
-    //TYPECHO
+
     /**
      * Create a new user instance after a valid registration.
      *

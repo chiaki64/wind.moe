@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'WindController@index');
-Route::get('/articles', 'WindController@index');
+Route::get('/articles', 'WindController@api_to_index');
 
 //post article
 Route::post('/articles', 'WindController@store');
@@ -27,8 +27,8 @@ Route::get('/api/articles/{id}', 'WindController@api_get_article');
 Route::get('/api/more/{id}', 'WindController@api_get_more_article');
 
 // api_category
+Route::get('/api/category/max', 'WindController@api_max_category_id');
 Route::get('/api/category/{category}/{id}', 'WindController@api_get_more_category_article');
-
 //=========================================================================================
 
 
@@ -59,7 +59,7 @@ Route::resource('articles', 'WindController');
 
 // 认证路由
 Route::get('auth/login', 'Auth\AuthController@getLogin');
-Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::post('auth/login', 'Auth\AuthController@postLogin');//\wind.moe\vendor\laravel\framework\src\Illuminate\Foundation\Auth\AuthenticatesUsers.php
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
 // 注册路由
 Route::get('auth/register', 'Auth\AuthController@getRegister');
