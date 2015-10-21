@@ -35,9 +35,9 @@
             <div class="am-form-group" style="width:40%">
                 <label for="category-select">Category</label>
                 <select id="category-select" name="category">
-                    <option value="essay">Essay</option>
-                    <option value="code">Code</option>
-                    <option value="daily">Daily</option>
+                    <option value="Essay">Essay</option>
+                    <option value="Code">Code</option>
+                    <option value="Daily">Daily</option>
                 </select>
                 <span class="am-form-caret"></span>
             </div>

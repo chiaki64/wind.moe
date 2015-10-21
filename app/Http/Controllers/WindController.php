@@ -51,7 +51,7 @@ class WindController extends Controller
 
     //获取更多文章 Num:8 / tag:Article
     public function api_get_more_article($id){
-        for($count=1,$sum=0;$count <= 5 && $id>0 ;$count++,$id--){
+        for($count=1,$sum=0;$count <= 6 && $id>0 ;$count++,$id--){
             $article[$count] = Article::find($id);
 
             if(Article::find($id)!=null) //当不为空值时 $sum + 1  | $sum 的作用是判断剩下的文章是否加载完成
@@ -63,20 +63,17 @@ class WindController extends Controller
 
     //获取更多对应标签文章  Num:8 / tag:$category
     public function api_get_more_category_article($category,$id){
-        for($count=0;$count < 5 && $id>0;$id--){
+        for($count=1;$count <= 6 && $id>0;$id--){
             $articles = Article::find($id);
             if($articles['category']==$category){
                 $article[$count]=$articles;
                 $count++;
             }
         }
-        if($count==0) {
-            $article[$count] = "no data";
-            return $article[$count];
-        }
-        else {
-            return $article;
-        }
+        if($count<5)
+            $article[$count]=null;
+        return $article;
+
     }
 
     //测试中api   请勿调用

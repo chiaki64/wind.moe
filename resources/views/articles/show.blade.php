@@ -7,7 +7,7 @@
             <ol class="am-breadcrumb">
                 <li><a href="#">Home</a>
                 </li>
-                <li><a href="#">{{ $article->category }}</a>
+                <li><a href="{{ $article->category }}">{{ $article->category }}</a>
                 </li>
                 <li class="am-active">{{ $article->title }}</li>
             </ol>
@@ -18,7 +18,7 @@
                 <div class="am-article">
                     <h3 class="am-article-title blog-title am-text-center">
                         <a href="#" style="">{{ $article->title }}</a></h3>
-                    <h4 class="am-article-meta blog-meta am-text-center" style="margin-top:-10px;color:#888;">Oct.15 2015 under <a href="#">Diary</a></h4>
+                    <h4 class="am-article-meta blog-meta am-text-center" style="margin-top:-10px;color:#888;">Oct.15 2015 under <a href="{{ $article->category }}"> {{ $article->category }}</a></h4>
 
                     <div>
                         <p>{!!  $article->text !!}</p>

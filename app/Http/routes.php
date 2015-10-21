@@ -21,6 +21,7 @@ Route::post('/articles', 'WindController@store');
 // api_article
 Route::get('/api/articles', 'WindController@api_index');
 Route::get('/api/articles/max', 'WindController@api_max_article_id');
+Route::get('/articles/api/articles/max', 'WindController@api_max_article_id');
 Route::get('/api/articles/{id}', 'WindController@api_get_article');
 
 // api_more

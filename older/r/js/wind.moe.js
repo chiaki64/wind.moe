@@ -5,15 +5,24 @@ var g_Article_Daily_Num = null;
 
 $(document).ready(function () {
         $.AMUI.progress.start();
-        $.getJSON("./api/articles/max", function (json){   
-            g_Article_Num=json;
-            getArticleJson();
+        $.getJSON("./api/articles/max", function (json) {
+            g_Article_Num = json;
+            var this_url = window.location.pathname;
+            if (this_url.indexOf("essay") > 0) {
+                getCategoryJson("essay");
+            } else if (this_url.indexOf("code") > 0) {
+                getCategoryJson("code");
+            } else if (this_url.indexOf("daily") > 0) {
+                getCategoryJson("daily");
+            } else {
+                getArticleJson();
+            }
         });
     }),
     $(window).load(function () {
         $.AMUI.progress.done();
         window.console.log("Ծ‸Ծ 哎呀被发现了呢~\n如果您看到了这行文字，那么请收下我最诚挚的祝福  @稗田千秋 - Oct.17 2015");
-});
+    });
 
 //在这里从api/article/max获取当前置顶文章数量进行比较
 
@@ -24,7 +33,8 @@ $(document).ready(function () {
 if (document.getElementById("editor")) {
     var editor = new Simditor({
         textarea: $('#editor')
-    });} else {};
+    });
+} else {};
 
 
 //form -> AJAX
@@ -95,12 +105,11 @@ $(document).ready(function () {
 function getArticleJson() {
     var article_Url = null;
     var flag = 1;
-    $.getJSON("/api/more/"+g_Article_Num, function (json) {
+    $.getJSON("/api/more/" + g_Article_Num, function (json) {
         //alert("JSON Data : " + json);
-        
         $.each(json, function (index, domEle) {
             console.log(domEle);
-            g_Article_Num=g_Article_Num-1;
+            g_Article_Num = g_Article_Num - 1;
             if (domEle != null) {
                 $("#add_more").html(function (index, oldHtml) {
                     var text = "<div class=\"am-article\">";
@@ -112,6 +121,7 @@ function getArticleJson() {
                     text += "</a></h3>";
                     text += "<h4 class=\"am-article-meta blog-meta am-text-center\" style=\"margin-top:-10px;color:#888;\">";
                     text += domEle.published_at.toString();
+                    text += " under " + domEle.category;
                     text += "</h4>";
                     text += "<div>";
                     text += domEle.text.split('<!--more-->')[0];
@@ -129,7 +139,7 @@ function getArticleJson() {
             if (domEle === null && flag == 1) {
                 flag = 0;
                 window.console.log("到底了");
-                g_Article_Num=0;
+                g_Article_Num = 0;
                 $("#load_more").html(function (index, oldHtml) {
                     var load = "<p class=\"am-text-center\" >-The End-</p>";
                     return load;
@@ -140,5 +150,56 @@ function getArticleJson() {
     })
 };
 
-//显示时间
-var m=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Spt","Oct","Nov","Dec");
+//其他页面的渲染
+function getCategoryJson(page_Category) {
+    var article_Url = null;
+    var flag = 1;
+    $.getJSON("/api/category/" + page_Category + "/" + g_Article_Num, function (json) {
+        //alert("JSON Data : " + json);
+
+        $.each(json, function (index, domEle) {
+            console.log(domEle);
+            g_Article_Num = g_Article_Num - 1;
+            if (domEle != null) {
+
+                if (domEle.category === page_Category) {
+
+                    $("#add_more").html(function (index, oldHtml) {
+                        var text = "<div class=\"am-article\">";
+                        text += " <h3 class=\"am-article-title blog-title am-text-center\">";
+                        text += "<a href=\"/articles/";
+                        text += domEle.id;
+                        text += "\" style=\"\">";
+                        text += domEle.title;
+                        text += "</a></h3>";
+                        text += "<h4 class=\"am-article-meta blog-meta am-text-center\" style=\"margin-top:-10px;color:#888;\">";
+                        text += domEle.published_at.toString();
+                        text += " under " + domEle.category;
+                        text += "</h4>";
+                        text += "<div>";
+                        text += domEle.text.split('<!--more-->')[0];
+                        text += "</div>";
+                        text += "<p class=\"am-text-center\"><a href=\"/articles/";
+                        text += domEle.id;
+                        text += "\" class=\"am-text-lg\">-More-</a>";
+                        text += "<hr data-am-widget=\"divider\" style=\"\" class=\"am-divider am-divider-default\" />"
+                        text += "</div>";
+
+                        var test = oldHtml + text;
+                        return test;
+                    });
+                }
+            }
+            if (domEle === null && flag == 1 || g_Article_Num == 1) {
+                flag = 0;
+                window.console.log("到底了");
+                g_Article_Num = 0;
+                $("#load_more").html(function (index, oldHtml) {
+                    var load = "<p class=\"am-text-center\" >-The End-</p>";
+                    return load;
+                });
+
+            }
+        });
+    })
+};
