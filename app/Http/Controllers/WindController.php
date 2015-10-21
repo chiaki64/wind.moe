@@ -51,7 +51,7 @@ class WindController extends Controller
 
     //获取更多文章 Num:8 / tag:Article
     public function api_get_more_article($id){
-        for($count=1,$sum=0;$count<=8 && $id>0 ;$count++,$id--){
+        for($count=1,$sum=0;$count <= 5 && $id>0 ;$count++,$id--){
             $article[$count] = Article::find($id);
 
             if(Article::find($id)!=null) //当不为空值时 $sum + 1  | $sum 的作用是判断剩下的文章是否加载完成
@@ -63,7 +63,7 @@ class WindController extends Controller
 
     //获取更多对应标签文章  Num:8 / tag:$category
     public function api_get_more_category_article($category,$id){
-        for($count=0;$count<8 && $id>0;$id--){
+        for($count=0;$count < 5 && $id>0;$id--){
             $articles = Article::find($id);
             if($articles['category']==$category){
                 $article[$count]=$articles;
@@ -99,25 +99,29 @@ class WindController extends Controller
     public function index(){
         //$articles = Article::all();
 //        return \Auth::user();
-        $articles = Article::latest('published_at')->get();
-        return view('articles.article', compact('articles'));
+
+        $id = Article::max('id');
+        $articles = Article::latest('created_at')->whereBetween('id', array($id-7, $id))->get();
+
+        return view('articles.article');
         //other way
         //return view('articles.index')->with('articles', $articles);
+//        return view('articles.article');
     }
 
     public function essay(){
-        $articles = Article::latest('published_at')->get();
+        $articles = Article::latest('created_at')->get();
         return view('articles.essay', compact('articles'));
     }
 
     public function code(){
-        $articles = Article::latest('published_at')->get();
+        $articles = Article::latest('created_at')->get();
         return view('articles.code', compact('articles'));
     }
 
     public function daily(){
         //$articles = Article::all();
-        $articles = Article::latest('published_at')->get();
+        $articles = Article::latest('created_at')->get();
         return view('articles.daily', compact('articles'));
     }
 
@@ -156,7 +160,13 @@ class WindController extends Controller
         $this->validate($request, ['title' => 'required|min:1', 'text' =>'required', 'category' => 'required']);
         $request['created_at'] = Carbon::now('Asia/Shanghai');
         $request['updated_at'] = Carbon::now('Asia/Shanghai');
-        $request['published_at'] = Carbon::now('Asia/Shanghai');
+        $tmp_data = $request['created_at'];
+        $request['published_at'] = date('M.d Y',strtotime($tmp_data));
+        //寻找 <!--more--> 字段
+        $find_text = $request['text'];
+        $replace_text = str_replace('&lt;!--more--&gt;','<!--more-->',$find_text);
+        $request['text']= $replace_text;
+        //完毕
         Article::create($request->all());
         return redirect('articles');
 //        \Auth::user()->articles()->create($request->all());
@@ -177,6 +187,11 @@ class WindController extends Controller
         $article = Article::findOrFail($id);
         $request['updated_at'] = Carbon::now('Asia/Shanghai');
         $request['published_at'] = Carbon::now('Asia/Shanghai');
+        //寻找 <!--more--> 字段
+        $find_text = $request['text'];
+        $replace_text = str_replace('&lt;!--more--&gt;','<!--more-->',$find_text);
+        $request['text']= $replace_text;
+        //完毕
         $article->update($request->all());
         return redirect('articles');
     }
