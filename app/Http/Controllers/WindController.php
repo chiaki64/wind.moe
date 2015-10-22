@@ -19,7 +19,6 @@ class WindController extends Controller
     //to_index
     public function api_to_index(){
         return redirect('');
-
     }
 
     //获取最大文章数
@@ -70,9 +69,28 @@ class WindController extends Controller
                 $count++;
             }
         }
-        if($count<5)
+        if($count<6)
             $article[$count]=null;
         return $article;
+
+    }
+
+    function api_search($keyword){
+        $id = Article::max('id');
+        for($cnt=1;$id>0;$id--){
+            $article = Article::find($id);
+            if(stripos($article['title'],$keyword) || stripos($article['text'],$keyword)){
+                $articles[$cnt]=$article;
+                $cnt++;
+            }else if(stristr($article['tags'],$keyword)){
+                $articles[$cnt]=$article;
+                $cnt++;
+            }
+            if($id==1 && $cnt==1)
+                $articles[$cnt]=null;
+        }
+        return $articles;
+
 
     }
 
@@ -97,8 +115,8 @@ class WindController extends Controller
         //$articles = Article::all();
 //        return \Auth::user();
 
-        $id = Article::max('id');
-        $articles = Article::latest('created_at')->whereBetween('id', array($id-7, $id))->get();
+//        $id = Article::max('id');
+//        $articles = Article::latest('created_at')->whereBetween('id', array($id-7, $id))->get();
 
         return view('articles.article');
         //other way
@@ -107,23 +125,32 @@ class WindController extends Controller
     }
 
     public function essay(){
-        $articles = Article::latest('created_at')->get();
-        return view('articles.essay', compact('articles'));
+//        $articles = Article::latest('created_at')->get();
+//        return view('articles.essay', compact('articles'));
+        return view('articles.essay');
     }
 
     public function code(){
-        $articles = Article::latest('created_at')->get();
-        return view('articles.code', compact('articles'));
+//        $articles = Article::latest('created_at')->get();
+//        return view('articles.code', compact('articles'));
+        return view('articles.code');
     }
 
     public function daily(){
         //$articles = Article::all();
-        $articles = Article::latest('created_at')->get();
-        return view('articles.daily', compact('articles'));
+//        $articles = Article::latest('created_at')->get();
+//        return view('articles.daily', compact('articles'));
+        return view('articles.daily');
     }
 
     public function links(){
         return "links page";
+    }
+
+    public function search(){
+//        $articles = Article::latest('created_at')->get();
+//        return view('articles.search', compact('articles'));
+        return view('articles.search');
     }
 
     public function show($id){

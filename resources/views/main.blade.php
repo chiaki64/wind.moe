@@ -77,7 +77,7 @@
 </div>
 
 <script type="text/javascript" src="https://wind.moe/wind.moe/r/js/jquery-2.1.4.min.js"></script>
-<script type="text/javascript" src="https://wind.moe/wind.moe/r/js/react.min.js"></script>
+<!--react-->>
 <script type="text/javascript" src="https://wind.moe/wind.moe/r/js/amazeui.min.js"></script>
 <script type="text/javascript" src="https://wind.moe/wind.moe/r/js/module.js"></script>
 <script type="text/javascript" src="https://wind.moe/wind.moe/r/js/hotkeys.js"></script>

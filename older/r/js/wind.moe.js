@@ -14,6 +14,9 @@ $(document).ready(function () {
                 getCategoryJson("code");
             } else if (this_url.indexOf("daily") > 0) {
                 getCategoryJson("daily");
+            } else if (this_url.indexOf("search") > 0) {
+                var tmp_keyword = this_url.split("search/")[1];
+                wind_search(tmp_keyword);
             } else {
                 getArticleJson();
             }
@@ -203,3 +206,45 @@ function getCategoryJson(page_Category) {
         });
     })
 };
+
+function wind_search(t_keyword) {
+    //    var t_keyword = eval(document.getElementById('keyword')).value;
+    $.getJSON("./api/search/" + t_keyword, function (json) {
+        console.log(json);
+        $.each(json, function (index, domEle) {
+            console.log(domEle);
+            if (domEle != null) {
+                $("#add_more").html(function (index, oldHtml) {
+                    var text = "<div class=\"am-article\">";
+                    text += " <h3 class=\"am-article-title blog-title am-text-center\">";
+                    text += "<a href=\"/articles/";
+                    text += domEle.id;
+                    text += "\" style=\"\">";
+                    text += domEle.title;
+                    text += "</a></h3>";
+                    text += "<h4 class=\"am-article-meta blog-meta am-text-center\" style=\"margin-top:-10px;color:#888;\">";
+                    text += domEle.published_at.toString();
+                    text += " under " + domEle.category;
+                    text += "</h4>";
+                    text += "<div>";
+                    text += domEle.text.split('<!--more-->')[0];
+                    text += "</div>";
+                    text += "<p class=\"am-text-center\"><a href=\"/articles/";
+                    text += domEle.id;
+                    text += "\" class=\"am-text-lg\">-More-</a>";
+                    text += "<hr data-am-widget=\"divider\" style=\"\" class=\"am-divider am-divider-default\" />"
+                    text += "</div>";
+
+                    var test = oldHtml + text;
+                    return test;
+                });
+            }
+
+        });
+    });
+};
+
+function search_redirect() {
+    var goto_url = 'http://localhost:8000/search/' + eval(document.getElementById('keyword')).value;
+    window.location.href = goto_url;
+}

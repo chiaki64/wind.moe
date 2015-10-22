@@ -21,6 +21,7 @@ Route::post('/articles', 'WindController@store');
 // api_article
 Route::get('/api/articles', 'WindController@api_index');
 Route::get('/api/articles/max', 'WindController@api_max_article_id');
+Route::get('search/api/articles/max', 'WindController@api_max_article_id');
 Route::get('/articles/api/articles/max', 'WindController@api_max_article_id');
 Route::get('/api/articles/{id}', 'WindController@api_get_article');
 
@@ -30,6 +31,12 @@ Route::get('/api/more/{id}', 'WindController@api_get_more_article');
 // api_category
 Route::get('/api/category/max', 'WindController@api_max_category_id');
 Route::get('/api/category/{category}/{id}', 'WindController@api_get_more_category_article');
+
+//api search
+Route::get('/api/search/{keyword}','WindController@api_search');
+Route::get('/articles/api/search/{keyword}','WindController@api_search');
+Route::get('/search/api/search/{keyword}','WindController@api_search');
+
 //=========================================================================================
 
 
@@ -65,6 +72,11 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 // 注册路由
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
+
+//search
+Route::get('search', 'WindController@search');
+Route::get('search/{keyword}', 'WindController@search');
+Route::get('articles/search/{keyword}', 'WindController@search');
 
 
 

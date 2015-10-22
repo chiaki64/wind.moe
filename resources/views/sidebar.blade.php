@@ -15,8 +15,8 @@
     <div class="am-u-lg-3 am-u-md-3 am-container am-hide-sm-down">
         <div style="margin:10px;"></div>
         <div>
-            <input type="text" class="am-imput-group" placeholder="Keyword" style="border:1px solid #eee;">
-            <a href="" class="am-link-muted">>Search</a>
+            <input type="text" id="keyword" class="am-imput-group" placeholder="Keyword" style="border:1px solid #eee;">
+            <a href="javascript:void(0)" class="am-link-muted" onclick="search_redirect()">>Search</a>
         </div>
 
         <div style="margin:45px;"></div>
