@@ -7,7 +7,7 @@
             <ol class="am-breadcrumb">
                 <li><a href="#">Home</a>
                 </li>
-                <li><a href="{{ $article->category }}">{{ $article->category }}</a>
+                <li><a href="{{ strtolower($article->category) }}">{{ ucfirst($article->category) }}</a>
                 </li>
                 <li class="am-active">{{ $article->title }}</li>
             </ol>

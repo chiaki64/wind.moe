@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\Note;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
@@ -21,7 +22,7 @@ class WindController extends Controller
         return redirect('');
     }
 
-    //获取最大文章数
+    //获取最大文章数   del:max 融合到其他api里面
     public function api_max_article_id(){
         $id = Article::max('id');
         return $id;
@@ -40,12 +41,11 @@ class WindController extends Controller
 
     //获取单个文章
     public function api_get_article($id){
-        if(Article::find($id)) {
-            $articles = Article::find($id);
-            return $articles;
+        $articles = Article::find($id);
+        if(is_null($articles)){
+            abort(404);
         }
-        else
-            return "no data";
+        return $articles;
     }
 
     //获取更多文章 Num:8 / tag:Article
@@ -94,17 +94,20 @@ class WindController extends Controller
 
     }
 
-    //测试中api   请勿调用
-//    public function api_get_category_article($id,$category){
-//        $max = WindController::api_max_article_id();
-//        $articles = Article::all();
-//        foreach($articles as $article)
-//            if($article['category']=$category){
-//                $cat_article = $article;
-//            }
-//        endforeach
-//        return $cat_article;
-//    }
+    function api_random_article(){
+        $id = Article::max('id');
+        $numbers = range(1,$id);
+        shuffle($numbers);
+        $num=6;
+        $result = array_slice($numbers,0,$num);
+        $cnt=1;
+        foreach($result as $random){
+            $articles[$cnt]=Article::find($random);
+            $cnt++;
+        }
+        return $articles;
+
+    }
 
 
 
@@ -112,6 +115,7 @@ class WindController extends Controller
      * @return \Illuminate\View\View
      */
     public function index(){
+//清空注释
         //$articles = Article::all();
 //        return \Auth::user();
 
@@ -144,7 +148,7 @@ class WindController extends Controller
     }
 
     public function links(){
-        return "links page";
+        return view('admin.links');
     }
 
     public function search(){
@@ -156,7 +160,7 @@ class WindController extends Controller
     public function show($id){
         $article = Article::find($id);
 
-        // not found
+        //if not found
         if(is_null($article)){
             abort(404);
         }

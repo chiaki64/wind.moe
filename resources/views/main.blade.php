@@ -30,13 +30,13 @@
     <div>
         <div id="banner" class="am-text-center am-vertical-align">
             <div class="am-animation-fade am-vertical-align-middle">
-                <a href="/about"> <img src="https://wind.moe/wind.moe/r/img/avatar.png" alt="avatar" id="avatar" class="am-radius am-center" style="margin-top:20px;;width:120px;height:120px;border-radius:50%;overflow:hidden;"></a>
+                <a href="about"> <img src="https://wind.moe/wind.moe/r/img/avatar.png" alt="avatar" id="avatar" class="am-radius am-center" style="margin-top:20px;;width:120px;height:120px;border-radius:50%;overflow:hidden;"></a>
                 <div class="am-center am-text-center">
-                    <a href="#doc-oc-chiaki" data-am-offcanvas class="am-link-muted"><span>Hieda no Chiaki</span></a>
+                    <a href="about" data-am-offcanvas class="am-link-muted"><span>Hieda no Chiaki</span></a>
                     <br>
                     <span style="color:#aaa">WTF?Back-end:Font-end</span>
                     <br>
-                    <span style="color:#aaa">just a message~</span>
+                    <span style="color:#aaa">私は 理想が现実を覆せると信じています. かならず</span>
                     <br>
                         <span style="color:#aaa">
                         <a href="/articles/essay"  class="am-icon-file-text-o am-link-muted"> Essay</a>

@@ -17,7 +17,10 @@ $(document).ready(function () {
             } else if (this_url.indexOf("search") > 0) {
                 var tmp_keyword = this_url.split("search/")[1];
                 wind_search(tmp_keyword);
-            } else {
+            }else if (this_url.indexOf("links") > 0) {
+                $("#bread_del").remove(); 
+            } 
+            else {
                 getArticleJson();
             }
         });
@@ -25,7 +28,8 @@ $(document).ready(function () {
     $(window).load(function () {
         $.AMUI.progress.done();
         window.console.log("Ծ‸Ծ 哎呀被发现了呢~\n如果您看到了这行文字，那么请收下我最诚挚的祝福  @稗田千秋 - Oct.17 2015");
-    });
+    }
+);
 
 //在这里从api/article/max获取当前置顶文章数量进行比较
 
@@ -78,42 +82,17 @@ $(document).ready(function () {
     });
 });
 
-
-//Loading Article
-//function loadArticle() {
-//    $("#add_more").html(function (index, oldHtml) {
-//        var text = "<div class=\"am-article\">";
-//        text += " <h3 class=\"am-article-title blog-title am-text-center\">";
-//        text += "<a href=\"#\" style=\"\">";
-//        text += "标题";
-//        text += "</a></h3>";
-//        text += "<h4 class=\"am-article-meta blog-meta am-text-center\" style=\"margin-top:-10px;color:#888;\">";
-//        text += "时间";
-//        text += "</h4>";
-//        text += "<div>";
-//        text += "正文";
-//        text += "</div>";
-//        text += "<p class=\"am-text-center\"><a href=\"";
-//        text += "/articles/id";
-//        text += "\" class=\"am-text-lg\">-More-</a>";
-//        text += "<hr data-am-widget=\"divider\" style=\"\" class=\"am-divider am-divider-default\" />"
-//        text += "</div>";
-//
-//        var test = oldHtml + text;
-//        return test;
-//    });
-//};
-
-
+//前端渲染  
 function getArticleJson() {
     var article_Url = null;
     var flag = 1;
     $.getJSON("/api/more/" + g_Article_Num, function (json) {
         //alert("JSON Data : " + json);
+        //重用代码 减少耦合
         $.each(json, function (index, domEle) {
             console.log(domEle);
             g_Article_Num = g_Article_Num - 1;
-            if (domEle != null) {
+            if (domEle !== null) {
                 $("#add_more").html(function (index, oldHtml) {
                     var text = "<div class=\"am-article\">";
                     text += " <h3 class=\"am-article-title blog-title am-text-center\">";
@@ -243,6 +222,7 @@ function wind_search(t_keyword) {
         });
     });
 };
+
 
 function search_redirect() {
     var goto_url = 'http://localhost:8000/search/' + eval(document.getElementById('keyword')).value;

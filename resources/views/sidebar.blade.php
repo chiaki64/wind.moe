@@ -20,12 +20,12 @@
         </div>
 
         <div style="margin:45px;"></div>
-        <div>
+        <div>//Step 2
             <!--div块-->
             <p>Note</p>
             <hr data-am-widget="divider" style="" class="am-divider am-divider-default wind-divider" />
             <div class="wind-offcanvas-div"></div>
-            <p>
+            <p id="sidebar_note">
                 欢迎访问我的小站~
                 <br> 欢迎访问我的小站~
                 <br> 欢迎访问我的小站~
@@ -58,12 +58,12 @@
             </p>
         </div>
 
-        <div>
+        <div>//Step 1 随机文章
             <!--div块-->
             <p>TimeLine/Random Article</p>
             <hr data-am-widget="divider" style="" class="am-divider am-divider-default wind-divider" />
             <div class="wind-offcanvas-div"></div>
-            <p>
+            <p id="sidebar_random">
             <div>
                 <a href="" class="am-link-muted">文章名字</a>&nbsp;&nbsp;&nbsp;&nbsp;<small>Oct.15</small>
             </div>
@@ -79,36 +79,36 @@
             </p>
         </div>
 
-        <div>
-            <!--div块-->
-            <p>Tags</p>
-            <hr data-am-widget="divider" style="" class="am-divider am-divider-default wind-divider" />
-            <div class="wind-offcanvas-div"></div>
-            <p>
-                标签
-                <br>标签
-                <br>标签
-                <br>标签
-                <br>
-            </p>
-        </div>
+        {{--<div>--}}
+            {{--<!--div块-->--}}
+            {{--<p>Tags</p>--}}
+            {{--<hr data-am-widget="divider" style="" class="am-divider am-divider-default wind-divider" />--}}
+            {{--<div class="wind-offcanvas-div"></div>--}}
+            {{--<p id=""sidebar_tags>--}}
+                {{--标签--}}
+                {{--<br>标签--}}
+                {{--<br>标签--}}
+                {{--<br>标签--}}
+                {{--<br>--}}
+            {{--</p>--}}
+        {{--</div>--}}
 
-        <div style="height:150px;">
-            <!--div块-->
-            <p>Music Player</p>
-            <hr data-am-widget="divider" style="" class="am-divider am-divider-default wind-divider" />
-            <div class="wind-offcanvas-div"></div>
-            <p>
-                高度固定以防不测
-            </p>
-        </div>
+        {{--<div style="height:150px;">--}}
+            {{--<!--div块-->--}}
+            {{--<p>Music Player</p>--}}
+            {{--<hr data-am-widget="divider" style="" class="am-divider am-divider-default wind-divider" />--}}
+            {{--<div class="wind-offcanvas-div"></div>--}}
+            {{--<p>--}}
+                {{--高度固定以防不测--}}
+            {{--</p>--}}
+        {{--</div>--}}
 
         <div style="height:150px;">
             <!--div块-->
             <p>Booklist</p>
             <hr data-am-widget="divider" style="" class="am-divider am-divider-default wind-divider" />
             <div class="wind-offcanvas-div"></div>
-            <p>
+            <p id="sidebar_book">
                 书名 <br>
                 书名 <br>
                 书名 <br>
@@ -127,8 +127,25 @@
             </p>
         </div>
 
-
-
-
     </div>
+
+    <!--Offcanvas-->
+    <div style="margin-top:50px;"></div>
+    <div id="doc-oc-chiaki" class="am-offcanvas">
+        <section class="am-offcanvas-bar" id="offcanvas_more">
+            <div class="am-offcanvas-content">
+                <h1>稗田千秋</h1>
+                <h3>东方舰娘/RPG MAKER/古典文学</h3>
+                <p>info</p>
+                <a href="wind.moe">info1</a>
+            </div>
+            <div class="am-offcanvas-content">
+                <small>Oct.22 2015 </small>
+                <span>人生如戏,全靠演技</span>
+            </div>
+        </section>
+    </div>
+
+
+
 @stop

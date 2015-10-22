@@ -37,6 +37,8 @@ Route::get('/api/search/{keyword}','WindController@api_search');
 Route::get('/articles/api/search/{keyword}','WindController@api_search');
 Route::get('/search/api/search/{keyword}','WindController@api_search');
 
+//api random
+Route::get('/api/random/article','WindController@api_random_article');
 //=========================================================================================
 
 
@@ -78,7 +80,10 @@ Route::get('search', 'WindController@search');
 Route::get('search/{keyword}', 'WindController@search');
 Route::get('articles/search/{keyword}', 'WindController@search');
 
-
+//api sidebar
+//Route::get('/api/notes/max','NotesController@api_notes_max');
+//Route::get('/api/notes/max','NotesController@api_show_notes');
+//Route::get('/api/notes/max','NotesController@api_get_notes');
 
 
 

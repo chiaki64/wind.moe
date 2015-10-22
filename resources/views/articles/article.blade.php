@@ -5,25 +5,18 @@
         <div id="add_more">
             <!--Breadcrumb-->
             <ol class="am-breadcrumb">
-                <li><a href="/">Home</a>
+                <li><a href="/" class="am-icon-home am-icon-sm">Home</a>
                 </li>
             </ol>
 
             <div style="margin-top:60px"></div>
-
-
-
 
         </div>
         <div style="margin-top:50px;">
             <p class="am-text-center" id="load_more"><a href="javascript:void(0)" class="am-text-lg" onclick="getArticleJson()">-Load More Article-</a></p>
         </div>
     </div>
-
-
-
     @yield('sidebar')
-
 
 
 @stop
