@@ -89,6 +89,12 @@ $(document).ready(function () {
 function getArticleJson() {
     var article_Url = null;
     var flag = 1;
+    if(g_Article_Num == 0){
+        $("#load_more").html(function (index, oldHtml) {
+            var load = "<p class=\"am-text-center\" >-The End-</p>";
+                    return load;
+                });
+    }
     $.getJSON("/api/more/" + g_Article_Num, function (json) {
         //alert("JSON Data : " + json);
         //重用代码 减少耦合
@@ -228,18 +234,18 @@ function wind_search(t_keyword) {
 
 
 function search_redirect() {
-    var goto_url = 'http://localhost:8000/search/' + eval(document.getElementById('keyword')).value;
+    var goto_url = 'https://wind.moe/search/' + eval(document.getElementById('keyword')).value;
     window.location.href = goto_url;
 }
 
 //get random article
 function getRandomJson() {
-    $.getJSON("http://localhost:8000/api/random/article", function (json) {
+    $.getJSON("https://wind.moe/api/random/article", function (json) {
         $.each(json, function (index, domEle) {
             console.log(domEle);
             if (domEle !== null) {
                 $("#sidebar_random").html(function (index, oldHtml) {
-                    var text = "<div class=\"am-text-truncate\" style=\"width:180px;\"><a href=\"http://localhost:8000/articles/";
+                    var text = "<div class=\"am-text-truncate\" style=\"width:180px;\"><a href=\"https://wind.moe/articles/";
                     text += domEle.id;
                     text += "\" class=\"am-link-muted am-text-truncate\">";
                     text += domEle.title;

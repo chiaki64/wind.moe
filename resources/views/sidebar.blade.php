@@ -98,23 +98,37 @@
             <hr data-am-widget="divider" style="" class="am-divider am-divider-default wind-divider" />
             <div class="wind-offcanvas-div"></div>
             <p id="sidebar_book">
-                书名 <br>
-                书名 <br>
-                书名 <br>
+                《追忆似水年华》 <br>
+                《JavaScript权威指南》 <br>
+                《写给大家看的设计书》 <br>
+                《深入理解计算机系统》 <br>
             </p>
         </div>
 
         <div style="height:150px;">
             <!--div块-->
-            <p>Contact Me</p>
+            <p>Function</p>
             <hr data-am-widget="divider" style="" class="am-divider am-divider-default wind-divider" />
             <div class="wind-offcanvas-div"></div>
             <p>
-                <a href="" class="am-link-muted">i@wind.moe</a><br>
-                <a href="" class="am-link-muted">QQ</a><br>
-                <a href="" class="am-link-muted">Steam</a><br>
+                inventory<br>
+                 <br>
+                <br>
+                 <br>
             </p>
         </div>
+
+        {{--<div style="height:150px;">--}}
+            {{--<!--div块-->--}}
+            {{--<p>Contact Me</p>--}}
+            {{--<hr data-am-widget="divider" style="" class="am-divider am-divider-default wind-divider" />--}}
+            {{--<div class="wind-offcanvas-div"></div>--}}
+            {{--<p>--}}
+                {{--<a href="" class="am-link-muted">i@wind.moe</a><br>--}}
+                {{--<a href="" class="am-link-muted">QQ</a><br>--}}
+                {{--<a href="" class="am-link-muted">Steam</a><br>--}}
+            {{--</p>--}}
+        {{--</div>--}}
 
         <div style="height:150px;">
             <!--div块-->
@@ -122,7 +136,7 @@
             <hr data-am-widget="divider" style="" class="am-divider am-divider-default wind-divider" />
             <div class="wind-offcanvas-div"></div>
             <p id="sidebar_book">
-                Wprking...
+                Working...
             </p>
         </div>
 

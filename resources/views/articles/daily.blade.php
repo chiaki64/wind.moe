@@ -5,7 +5,7 @@
         <div id="add_more">
             <!--Breadcrumb-->
             <ol class="am-breadcrumb">
-                <li><a href="/">Home</a>
+                <li><a href="/" class="am-icon-home">Home</a>
                 </li>
                 <li><a href="/articles/Daily"> Daily</a>
                 </li>

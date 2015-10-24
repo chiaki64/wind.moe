@@ -34,9 +34,9 @@
                 <div class="am-center am-text-center am-animation-fade">
                     <a href="about" data-am-offcanvas class="am-link-muted"><span>Hieda no Chiaki</span></a>
                     <br>
-                    <span style="color:#aaa">WTF?Back-end:Font-end</span>
+                    <span style="color:#aaa">WTF?Back-end:Front-end</span>
                     <br>
-                    <span style="color:#aaa">私は 理想が现実を覆せると信じています. かならず</span>
+                    <span style="color:#aaa">私は 理想が现実を覆せると信じています.</span>
                     <br>
                         <span style="color:#aaa">
                         <a href="/articles/essay"  class="am-icon-file-text-o am-link-muted"> Essay</a>
@@ -77,13 +77,13 @@
 </div>
 
 <script type="text/javascript" src="https://wind.moe/wind.moe/r/js/jquery-2.1.4.min.js"></script>
-<!--react-->>
+<!--react-->
 <script type="text/javascript" src="https://wind.moe/wind.moe/r/js/amazeui.min.js"></script>
 <script type="text/javascript" src="https://wind.moe/wind.moe/r/js/module.js"></script>
 <script type="text/javascript" src="https://wind.moe/wind.moe/r/js/hotkeys.js"></script>
 <script type="text/javascript" src="https://wind.moe/wind.moe/r/js/uploader.js"></script>
 <script type="text/javascript" src="https://wind.moe/wind.moe/r/js/simditor.js"></script>
-<script type="text/javascript" src="https://wind.moe/wind.moe/r/js/wind.moe.js"></script>
+<script type="text/javascript" src="https://wind.moe/wind.moe/r/js/wind.moe.min.js"></script>
 </body>
 
 </html>
