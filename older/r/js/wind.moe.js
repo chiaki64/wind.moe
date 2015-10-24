@@ -22,12 +22,15 @@ $(document).ready(function () {
             } 
             else {
                 getArticleJson();
+                
             }
         });
     }),
     $(window).load(function () {
         $.AMUI.progress.done();
+        getRandomJson();
         window.console.log("Ծ‸Ծ 哎呀被发现了呢~\n如果您看到了这行文字，那么请收下我最诚挚的祝福  @稗田千秋 - Oct.17 2015");
+        
     }
 );
 
@@ -95,7 +98,7 @@ function getArticleJson() {
             if (domEle !== null) {
                 $("#add_more").html(function (index, oldHtml) {
                     var text = "<div class=\"am-article\">";
-                    text += " <h3 class=\"am-article-title blog-title am-text-center\">";
+                    text += " <h3 class=\"am-article-title blog-title am-text-center am-animation-fade\">";
                     text += "<a href=\"/articles/";
                     text += domEle.id;
                     text += "\" style=\"\">";
@@ -105,7 +108,7 @@ function getArticleJson() {
                     text += domEle.published_at.toString();
                     text += " under " + domEle.category;
                     text += "</h4>";
-                    text += "<div>";
+                    text += "<div  class=\"am-animation-fade\">";
                     text += domEle.text.split('<!--more-->')[0];
                     text += "</div>";
                     text += "<p class=\"am-text-center\"><a href=\"/articles/";
@@ -148,7 +151,7 @@ function getCategoryJson(page_Category) {
 
                     $("#add_more").html(function (index, oldHtml) {
                         var text = "<div class=\"am-article\">";
-                        text += " <h3 class=\"am-article-title blog-title am-text-center\">";
+                        text += " <h3 class=\"am-article-title blog-title am-text-center am-animation-fade\">";
                         text += "<a href=\"/articles/";
                         text += domEle.id;
                         text += "\" style=\"\">";
@@ -158,7 +161,7 @@ function getCategoryJson(page_Category) {
                         text += domEle.published_at.toString();
                         text += " under " + domEle.category;
                         text += "</h4>";
-                        text += "<div>";
+                        text += "<div  class=\"am-animation-fade\">";
                         text += domEle.text.split('<!--more-->')[0];
                         text += "</div>";
                         text += "<p class=\"am-text-center\"><a href=\"/articles/";
@@ -195,7 +198,7 @@ function wind_search(t_keyword) {
             if (domEle != null) {
                 $("#add_more").html(function (index, oldHtml) {
                     var text = "<div class=\"am-article\">";
-                    text += " <h3 class=\"am-article-title blog-title am-text-center\">";
+                    text += " <h3 class=\"am-article-title blog-title am-text-center am-animation-fade\">";
                     text += "<a href=\"/articles/";
                     text += domEle.id;
                     text += "\" style=\"\">";
@@ -205,7 +208,7 @@ function wind_search(t_keyword) {
                     text += domEle.published_at.toString();
                     text += " under " + domEle.category;
                     text += "</h4>";
-                    text += "<div>";
+                    text += "<div class=\"am-animation-fade\">";
                     text += domEle.text.split('<!--more-->')[0];
                     text += "</div>";
                     text += "<p class=\"am-text-center\"><a href=\"/articles/";
@@ -228,3 +231,23 @@ function search_redirect() {
     var goto_url = 'http://localhost:8000/search/' + eval(document.getElementById('keyword')).value;
     window.location.href = goto_url;
 }
+
+//get random article
+function getRandomJson() {
+    $.getJSON("http://localhost:8000/api/random/article", function (json) {
+        $.each(json, function (index, domEle) {
+            console.log(domEle);
+            if (domEle !== null) {
+                $("#sidebar_random").html(function (index, oldHtml) {
+                    var text = "<div class=\"am-text-truncate\" style=\"width:180px;\"><a href=\"http://localhost:8000/articles/";
+                    text += domEle.id;
+                    text += "\" class=\"am-link-muted am-text-truncate\">";
+                    text += domEle.title;
+                    text += "</a></div>";
+                    var test = oldHtml + text;
+                    return test;
+                });
+            }
+        });
+    })
+};
