@@ -5,7 +5,7 @@
         <div>
             <!--Breadcrumb-->
             <ol class="am-breadcrumb">
-                <li><a href="#">Home</a>
+                <li><a href="/" class="am-icon-home am-icon-sm">Home</a>
                 </li>
                 <li><a href="{{ strtolower($article->category) }}">{{ ucfirst($article->category) }}</a>
                 </li>

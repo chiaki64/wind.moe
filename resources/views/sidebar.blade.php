@@ -20,64 +20,53 @@
         </div>
 
         <div style="margin:45px;"></div>
-        <div>//Step 2
+        <div>
             <!--div块-->
             <p>Note</p>
             <hr data-am-widget="divider" style="" class="am-divider am-divider-default wind-divider" />
             <div class="wind-offcanvas-div"></div>
             <p id="sidebar_note">
-                欢迎访问我的小站~
-                <br> 欢迎访问我的小站~
-                <br> 欢迎访问我的小站~
+                写些什么好呢..
+                <br>
+                <br>
                 <br>
             </p>
         </div>
 
-        <div style="height:150px;">
-            <!--div块-->
-            <p>一言API</p>
-            <hr data-am-widget="divider" style="" class="am-divider am-divider-default wind-divider" />
-            <div class="wind-offcanvas-div"></div>
-            <p>
-                高度固定以防不测
-            </p>
-        </div>
+        {{--<div style="height:150px;">--}}
+            {{--<!--div块-->--}}
+            {{--<p>一言API</p>--}}
+            {{--<hr data-am-widget="divider" style="" class="am-divider am-divider-default wind-divider" />--}}
+            {{--<div class="wind-offcanvas-div"></div>--}}
+            {{--<p>--}}
+                {{--高度固定以防不测--}}
+            {{--</p>--}}
+        {{--</div>--}}
+
+        {{--<div>--}}
+            {{--<!--div块-->--}}
+            {{--<p>Categories</p>--}}
+            {{--<hr data-am-widget="divider" style="" class="am-divider am-divider-default wind-divider" />--}}
+            {{--<div class="wind-offcanvas-div"></div>--}}
+            {{--<p>--}}
+                {{--<a href="" class="am-link-muted">我是目录一(num)</a>--}}
+                {{--<br>--}}
+                {{--<a href="" class="am-link-muted">我是目录二(num)</a>--}}
+                {{--<br>--}}
+                {{--<a href="" class="am-link-muted">我是目录三(num)</a>--}}
+                {{--<br>--}}
+            {{--</p>--}}
+        {{--</div>--}}
 
         <div>
             <!--div块-->
-            <p>Categories</p>
+            <p>Random Article</p>
             <hr data-am-widget="divider" style="" class="am-divider am-divider-default wind-divider" />
             <div class="wind-offcanvas-div"></div>
-            <p>
-                <a href="" class="am-link-muted">我是目录一(num)</a>
-                <br>
-                <a href="" class="am-link-muted">我是目录二(num)</a>
-                <br>
-                <a href="" class="am-link-muted">我是目录三(num)</a>
-                <br>
-            </p>
+            <div id="sidebar_random" style="width:180px;">
+            </div>
         </div>
-
-        <div>//Step 1 随机文章
-            <!--div块-->
-            <p>TimeLine/Random Article</p>
-            <hr data-am-widget="divider" style="" class="am-divider am-divider-default wind-divider" />
-            <div class="wind-offcanvas-div"></div>
-            <p id="sidebar_random">
-            <div>
-                <a href="" class="am-link-muted">文章名字</a>&nbsp;&nbsp;&nbsp;&nbsp;<small>Oct.15</small>
-            </div>
-
-
-            <div>
-                <a href="" class="am-link-muted">文章长名字</a> &nbsp;&nbsp;&nbsp;&nbsp;<small>Oct.15</small>
-            </div>
-
-            <div>
-                <a href="" class="am-link-muted">文章特长名字</a> &nbsp;&nbsp;&nbsp;&nbsp;<small>Oct.15</small>
-            </div>
-            </p>
-        </div>
+        <br>
 
         {{--<div>--}}
             {{--<!--div块-->--}}
@@ -124,6 +113,16 @@
                 <a href="" class="am-link-muted">i@wind.moe</a><br>
                 <a href="" class="am-link-muted">QQ</a><br>
                 <a href="" class="am-link-muted">Steam</a><br>
+            </p>
+        </div>
+
+        <div style="height:150px;">
+            <!--div块-->
+            <p>Wroking</p>
+            <hr data-am-widget="divider" style="" class="am-divider am-divider-default wind-divider" />
+            <div class="wind-offcanvas-div"></div>
+            <p id="sidebar_book">
+                Wprking...
             </p>
         </div>
 

@@ -7,6 +7,8 @@
             <ol class="am-breadcrumb">
                 <li><a href="/">Home</a>
                 </li>
+                <li><a href="/articles/essay"> Essay</a>
+                </li>
             </ol>
 
             <div style="margin-top:60px"></div>

@@ -11,7 +11,7 @@
     <meta name="keywords" content="">
     <meta name="author" content="Hieda no Chiaki">
     <meta name="copyright" content="CopyRight©2011-2015 Chiaki.">
-    <meta name="generator" content="Brackets|WebStorm|NotePad++">
+    <meta name="generator" content="Brackets|PhpStorm|NotePad++">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp">
@@ -30,8 +30,8 @@
     <div>
         <div id="banner" class="am-text-center am-vertical-align">
             <div class="am-animation-fade am-vertical-align-middle">
-                <a href="about"> <img src="https://wind.moe/wind.moe/r/img/avatar.png" alt="avatar" id="avatar" class="am-radius am-center" style="margin-top:20px;;width:120px;height:120px;border-radius:50%;overflow:hidden;"></a>
-                <div class="am-center am-text-center">
+                <a href="about"> <img src="https://wind.moe/wind.moe/r/img/avatar.png" alt="avatar" id="avatar" class="am-radius am-center am-animation-fade" style="margin-top:20px;;width:120px;height:120px;border-radius:50%;overflow:hidden;"></a>
+                <div class="am-center am-text-center am-animation-fade">
                     <a href="about" data-am-offcanvas class="am-link-muted"><span>Hieda no Chiaki</span></a>
                     <br>
                     <span style="color:#aaa">WTF?Back-end:Font-end</span>
