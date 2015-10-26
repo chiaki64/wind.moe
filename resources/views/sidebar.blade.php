@@ -97,7 +97,7 @@
             <p>Booklist</p>
             <hr data-am-widget="divider" style="" class="am-divider am-divider-default wind-divider" />
             <div class="wind-offcanvas-div"></div>
-            <div id="sidebar_book" class="am-text-truncate">
+            <div id="sidebar_book"  class="am-text-truncate" style="width:100%">
                 <span> 《追忆似水年华》<br></span>
                 <span> 《JavaScript权威指南》<br></span>
                 <span> 《写给大家看的设计书》<br></span>
