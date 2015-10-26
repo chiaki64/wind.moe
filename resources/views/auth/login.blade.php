@@ -5,12 +5,12 @@
 
     <div>
         Email
-        <input type="hidden" name="email" value="i@wind.moe">
+        <input type="email" name="email" value="{{ old('email') }}">
     </div>
 
     <div>
         Password
-        <input type="hidden" name="password" id="password" value="Zhangzenan">
+        <input type="password" name="password" id="password">
     </div>
 
     <div>

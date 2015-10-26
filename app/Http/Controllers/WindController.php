@@ -214,8 +214,8 @@ class WindController extends Controller
     public function update($id, Request $request){
         $article = Article::findOrFail($id);
         $request['updated_at'] = Carbon::now('Asia/Shanghai');
-        $tmp_data = $request['created_at'];
-        $request['published_at'] = date('M.d Y',strtotime($tmp_data));
+//        $tmp_data = $request['created_at'];
+//        $request['published_at'] = date('M.d Y',strtotime($tmp_data));
         //寻找 <!--more--> 字段
         $find_text = $request['text'];
         $replace_text = str_replace('&lt;!--more--&gt;','<!--more-->',$find_text);

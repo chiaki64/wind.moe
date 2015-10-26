@@ -34,7 +34,7 @@
                 <div class="am-center am-text-center am-animation-fade">
                     <a href="about" data-am-offcanvas class="am-link-muted"><span>Hieda no Chiaki</span></a>
                     <br>
-                    <span style="color:#aaa">WTF?Back-end:Front-end</span>
+                    <span style="color:#aaa">Touhou|Front-End|Designer</span>
                     <br>
                     <span style="color:#aaa">私は 理想が现実を覆せると信じています.</span>
                     <br>
@@ -76,14 +76,14 @@
     </div>
 </div>
 
-<script type="text/javascript" src="https://wind.moe/wind.moe/r/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="https://dn-wind-moe.qbox.me/js/jquery-2.1.4.min.js"></script>
 <!--react-->
-<script type="text/javascript" src="https://wind.moe/wind.moe/r/js/amazeui.min.js"></script>
-<script type="text/javascript" src="https://wind.moe/wind.moe/r/js/module.js"></script>
-<script type="text/javascript" src="https://wind.moe/wind.moe/r/js/hotkeys.js"></script>
-<script type="text/javascript" src="https://wind.moe/wind.moe/r/js/uploader.js"></script>
-<script type="text/javascript" src="https://wind.moe/wind.moe/r/js/simditor.js"></script>
-<script type="text/javascript" src="https://wind.moe/wind.moe/r/js/wind.moe.min.js"></script>
+<script type="text/javascript" src="https://dn-wind-moe.qbox.me/js/amazeui.min.js"></script>
+<script type="text/javascript" src="https://dn-wind-moe.qbox.me/js/module.min.js"></script>
+<script type="text/javascript" src="https://dn-wind-moe.qbox.me/js/hotkeys.min.js"></script>
+<script type="text/javascript" src="https://dn-wind-moe.qbox.me/js/uploader.min.js"></script>
+<script type="text/javascript" src="https://dn-wind-moe.qbox.me/js/simditor.min.js"></script>
+<script type="text/javascript" src="https://dn-wind-moe.qbox.me/js/wind.moe.min.js"></script>
 </body>
 
 </html>

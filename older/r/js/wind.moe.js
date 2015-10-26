@@ -5,7 +5,7 @@ var g_Article_Daily_Num = null;
 
 $(document).ready(function () {
         $.AMUI.progress.start();
-        $.getJSON("./api/articles/max", function (json) {
+        $.getJSON("https://wind.moe/api/articles/max", function (json) {
             g_Article_Num = json;
             var this_url = window.location.pathname;
             if (this_url.indexOf("essay") > 0) {

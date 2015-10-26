@@ -97,25 +97,25 @@
             <p>Booklist</p>
             <hr data-am-widget="divider" style="" class="am-divider am-divider-default wind-divider" />
             <div class="wind-offcanvas-div"></div>
-            <p id="sidebar_book">
-                《追忆似水年华》 <br>
-                《JavaScript权威指南》 <br>
-                《写给大家看的设计书》 <br>
-                《深入理解计算机系统》 <br>
-            </p>
+            <div id="sidebar_book" class="am-text-truncate">
+                <span> 《追忆似水年华》<br></span>
+                <span> 《JavaScript权威指南》<br></span>
+                <span> 《写给大家看的设计书》<br></span>
+                <span> 《深入理解计算机系统》</span>
+            </div>
         </div>
-
+        <br>
         <div style="height:150px;">
             <!--div块-->
             <p>Function</p>
             <hr data-am-widget="divider" style="" class="am-divider am-divider-default wind-divider" />
             <div class="wind-offcanvas-div"></div>
-            <p>
-                inventory<br>
+            <div>
+                <a href="https://wind.moe/inventory">Inventory</a>
                  <br>
-                <br>
                  <br>
-            </p>
+                 <br>
+            </div>
         </div>
 
         {{--<div style="height:150px;">--}}
