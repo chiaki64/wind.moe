@@ -39,6 +39,10 @@ Route::get('/search/api/search/{keyword}','WindController@api_search');
 
 //api random
 Route::get('/api/random/article','WindController@api_random_article');
+
+//api comments
+Route::get('/api/comments/{id}','WindController@api_get_comments');
+Route::post('/comments', 'WindController@api_post_comments');
 //=========================================================================================
 
 

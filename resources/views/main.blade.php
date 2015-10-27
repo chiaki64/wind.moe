@@ -7,10 +7,10 @@
     <!-- many meta-->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="wind.moe">
-    <meta name="keywords" content="">
+    <meta name="description" content="Wind.moe是个人的一个记录学习生活点滴的博客.">
+    <meta name="keywords" content="稗田千秋,Hieda no Chiaki,Steam,ACG,技术,生活,Blog,宅">
     <meta name="author" content="Hieda no Chiaki">
-    <meta name="copyright" content="CopyRight©2011-2015 Chiaki.">
+    <meta name="copyright" content="CopyRight©2015 Chiaki.">
     <meta name="generator" content="Brackets|PhpStorm|NotePad++">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
     <meta name="renderer" content="webkit">
@@ -20,9 +20,9 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="msapplication-TileColor" content="#101a23">
     <!--link-->
-    <link rel="stylesheet" href="https://wind.moe/wind.moe/r/css/amazeui.min.css">
-    <link rel="stylesheet" href="https://wind.moe/wind.moe/r/css/app.css">
-    <link rel="stylesheet" href="https://wind.moe/wind.moe/r/css/simditor.css">
+    <link rel="stylesheet" href="https://dn-wind-moe.qbox.me/css/amazeui.min.css">
+    <link rel="stylesheet" href="https://dn-wind-moe.qbox.me/css/app.css">
+    <link rel="stylesheet" href="https://dn-wind-moe.qbox.me/css/simditor.css">
 
 </head>
 <body>
@@ -30,7 +30,7 @@
     <div>
         <div id="banner" class="am-text-center am-vertical-align">
             <div class="am-animation-fade am-vertical-align-middle">
-                <a href="about"> <img src="https://wind.moe/wind.moe/r/img/avatar.png" alt="avatar" id="avatar" class="am-radius am-center am-animation-fade" style="margin-top:20px;;width:120px;height:120px;border-radius:50%;overflow:hidden;"></a>
+                <a href="about"> <img src="https://dn-wind-moe.qbox.me/img/avatar.png" alt="avatar" id="avatar" class="am-radius am-center am-animation-fade" style="margin-top:20px;;width:120px;height:120px;border-radius:50%;overflow:hidden;"></a>
                 <div class="am-center am-text-center am-animation-fade">
                     <a href="about" data-am-offcanvas class="am-link-muted"><span>Hieda no Chiaki</span></a>
                     <br>

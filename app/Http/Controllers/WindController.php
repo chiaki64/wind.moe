@@ -109,6 +109,32 @@ class WindController extends Controller
 
     }
 
+    function api_get_comments($id){
+        //
+    }
+
+    function api_post_comments(Request $request){
+        $this->validate($request,['']);
+
+
+
+//        public function store(Request $request){
+//            $this->validate($request, ['title' => 'required|min:1', 'text' =>'required', 'category' => 'required']);
+//            $request['created_at'] = Carbon::now('Asia/Shanghai');
+//            $request['updated_at'] = Carbon::now('Asia/Shanghai');
+//            $tmp_data = $request['created_at'];
+//            $request['published_at'] = date('M.d Y',strtotime($tmp_data));
+//            //寻找 <!--more--> 字段
+//            $find_text = $request['text'];
+//            $replace_text = str_replace('&lt;!--more--&gt;','<!--more-->',$find_text);
+//            $request['text']= $replace_text;
+//            //完毕
+//            Article::create($request->all());
+//            return redirect('articles');
+//
+//
+    }
+
 
 
     /**
