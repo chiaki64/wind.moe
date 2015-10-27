@@ -83,7 +83,7 @@
 <script type="text/javascript" src="https://dn-wind-moe.qbox.me/js/hotkeys.min.js"></script>
 <script type="text/javascript" src="https://dn-wind-moe.qbox.me/js/uploader.min.js"></script>
 <script type="text/javascript" src="https://dn-wind-moe.qbox.me/js/simditor.min.js"></script>
-<script type="text/javascript" src="https://dn-wind-moe.qbox.me/js/wind.moe.min.js"></script>
+<script type="text/javascript" src="https://dn-wind-moe.qbox.me/js/wind.moe.js"></script>
 </body>
 
 </html>
