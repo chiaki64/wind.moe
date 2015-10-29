@@ -95,7 +95,7 @@
 
         <div class="form-group am-form-group" style="margin-bottom: 0px;">
             <div class="am-u-sm-12 am-u-md-8 am-u-lg-4" style="padding-left: 0px;">
-                {!! Form::text('email', null, ['class' => 'form-control am-input-sm','placeholder' => '邮箱','style' => 'border:0px;background:#eee;']) !!}
+                {!! Form::text('mail', null, ['class' => 'form-control am-input-sm','placeholder' => '邮箱','style' => 'border:0px;background:#eee;']) !!}
             </div>
         </div>
 
@@ -112,11 +112,21 @@
             </div>
         </div>
 
-        {{--<div class="form-group am-form-group" style="margin-bottom: 1.5rem;">--}}
-                {{--<div class="am-u-sm-12 am-u-md-8 am-u-lg-10" style="padding-left: 0px;">--}}
-                    {{--{!! Form::textarea('text', null, ['class' => 'form-control am-input-sm','placeholder' => '评论','style' => 'border:0px;background:#eee;', 'rows'=>'5', 'type'=>'hidden' ]) !!}--}}
-                {{--</div>--}}
-        {{--</div>--}}
+
+
+        <div class="form-group am-form-group" style="margin-bottom: 0px;">
+            <div class="am-u-sm-12 am-u-md-8 am-u-lg-4" style="padding-left: 0px;">
+                <input type="hidden"  name="pid" class="form-control am-input-sm" value="{{ $article->id }}">
+            </div>
+        </div>
+
+
+        <div class="form-group am-form-group" style="margin-bottom: 0px;">
+            <div class="am-u-sm-12 am-u-md-8 am-u-lg-4" style="padding-left: 0px;">
+                <input type="hidden" id="need_agent" name="agent" class="form-control am-input-sm" value="">
+            </div>
+        </div>
+
 
         <div class="form-group">
             {!! Form::submit('Add Comment', ['class' => 'btn btn-primary form-control am-btn am-btn-default am-input-sm']) !!}

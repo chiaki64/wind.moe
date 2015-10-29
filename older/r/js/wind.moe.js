@@ -17,22 +17,28 @@ $(document).ready(function () {
             } else if (this_url.indexOf("search") > 0) {
                 var tmp_keyword = this_url.split("search/")[1];
                 wind_search(tmp_keyword);
-            }else if (this_url.indexOf("links") > 0) {
-                $("#bread_del").remove(); 
-            } 
-            else {
+            } else if (this_url.indexOf("links") > 0) {
+                $("#bread_del").remove();
+            } else {
                 getArticleJson();
-                
+
             }
         });
     }),
     $(window).load(function () {
         $.AMUI.progress.done();
         getRandomJson();
+        if (document.getElementById("need_agent")) {
+            var browser = getBrowserInfo();
+            var verinfo = (browser + "").replace(/[^0-9.]/ig, "");
+            var agent = String(browser + verinfo);
+//            $("#need_agent").val().replace(agent);
+            document.getElementById("need_agent").value=agent;
+        }
+
         window.console.log("Ծ‸Ծ 哎呀被发现了呢~\n如果您看到了这行文字，那么请收下我最诚挚的祝福  @稗田千秋 - Oct.17 2015");
-        
-    }
-);
+
+    });
 
 //在这里从api/article/max获取当前置顶文章数量进行比较
 
@@ -41,20 +47,20 @@ $(document).ready(function () {
 
 //textedit
 if (document.getElementById("editor")) {
-    var toolbar = [ 'title', 'bold', 'italic', 'underline',         'strikethrough',
+    var toolbar = ['title', 'bold', 'italic', 'underline', 'strikethrough',
 'color', '|', 'ol', 'ul', 'blockquote', 'code', 'table', '|',
-'link', 'image', 'hr', '|', 'indent', 'outdent','alignment' ];
+'link', 'image', 'hr', '|', 'indent', 'outdent', 'alignment'];
     var editor = new Simditor({
         textarea: $('#editor'),
-        toolbar:toolbar,
-//        upload : {
-//url : 'ImgUpload.action', //文件上传的接口地址
-//params: null, //键值对,指定文件上传接口的额外参数,上传的时候随文件一起提交
-//fileKey: 'fileDataFileName', //服务器端获取文件数据的参数名
-//connectionCount: 3,
-//leaveConfirm: '正在上传文件'
-//}
-        
+        toolbar: toolbar,
+        //        upload : {
+        //url : 'ImgUpload.action', //文件上传的接口地址
+        //params: null, //键值对,指定文件上传接口的额外参数,上传的时候随文件一起提交
+        //fileKey: 'fileDataFileName', //服务器端获取文件数据的参数名
+        //connectionCount: 3,
+        //leaveConfirm: '正在上传文件'
+        //}
+
     });
 } else {};
 
@@ -101,11 +107,11 @@ $(document).ready(function () {
 function getArticleJson() {
     var article_Url = null;
     var flag = 1;
-    if(g_Article_Num == 0){
+    if (g_Article_Num == 0) {
         $("#load_more").html(function (index, oldHtml) {
             var load = "<p class=\"am-text-center\" >-The End-</p>";
-                    return load;
-                });
+            return load;
+        });
     }
     $.getJSON("/api/more/" + g_Article_Num, function (json) {
         //alert("JSON Data : " + json);
@@ -271,46 +277,32 @@ function getRandomJson() {
 };
 
 
-//function wind_comment(){
-//    
-//    
-//}
-//
-////form -> AJAX
-//function ajaxSubmit(updata, fn) {
-//    var dataPara = getFormJson(updata);
-//    $.ajax({
-//        url: updata.action,
-//        type: updata.method,
-//        data: dataPara,
-//        success: fn
-//    });
-//}
-//
-////form -> data
-//function getFormJson(updata) {
-//    var o = {};
-//    var a = $(updata).serializeArray();
-//    $.each(a, function () {
-//        if (o[this.name] !== undefined) {
-//            if (!o[this.name].push) {
-//                o[this.name] = [o[this.name]];
-//            }
-//            o[this.name].push(this.value || '');
-//        } else {
-//            o[this.name] = this.value || '';
-//        }
-//    });
-//    return o;
-//}
-//
-//$(document).ready(function () {
-//    $('#post-form').bind('submit', function () {
-//        ajaxSubmit(this, function (data) {
-//            alert("success!");
-//            parent.location.href = "/articles"
-//        });
-//        return false;
-//    });
-//});
+function getBrowserInfo() {
+    var agent = navigator.userAgent.toLowerCase();
+    var regStr_ie = /msie [\d.]+;/gi;
+    var regStr_ff = /firefox\/[\d.]+/gi
+    var regStr_chrome = /chrome\/[\d.]+/gi;
+    var regStr_saf = /safari\/[\d.]+/gi;
+    //IE
+    if (agent.indexOf("msie") > 0) {
+        return agent.match(regStr_ie);
+    }
+
+    //firefox
+    if (agent.indexOf("firefox") > 0) {
+        return agent.match(regStr_ff);
+    }
+
+    //Chrome
+    if (agent.indexOf("chrome") > 0) {
+        return agent.match(regStr_chrome);
+    }
+
+    //Safari
+    if (agent.indexOf("safari") > 0 && agent.indexOf("chrome") < 0) {
+        return agent.match(regStr_saf);
+    }
+
+}
+
 

@@ -126,11 +126,11 @@ class WindController extends Controller
 
     //获取post的requset 有错
     function api_post_comments(Request $request){
-        $this->validate($request,['author' => 'required|min:1', 'text' =>'required', 'mail' => 'required', 'url' => 'required']);
+//        $this->validate($request,['author' => 'required|min:1', 'text' =>'required', 'mail' => 'required', 'url' => 'required','agent'=>'required','pid'=>'required' ]);
         $tmp_date = Carbon::now('Asia/Shanghai');
         $request['published'] = date('M.d Y',strtotime($tmp_date));
         Comment::create($request->all());
-        return view('articles.article');
+        return redirect('articles');
     }
 
     //评论=======================================
