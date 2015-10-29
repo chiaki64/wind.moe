@@ -65,7 +65,7 @@
         <footer data-am-widget="footer" class="am-footer am-footer-default" data-am-footer="{  }">
             <div class="am-footer-miscs ">
                 Proudly powered by <a href="https://wind.moe/" title="稗田千秋" target="_blank" class="">Hieda no Chiaki</a>.
-                <p>CopyRight©2011-2015 Chiaki.</p>
+                <p>CopyRight©2015 Chiaki.</p>
                 <!--
 <a href="http://opensource.org/licenses/MIT" target="_blank">MIT license</a>
 -->

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Article;
 use App\Note;
+use App\Comment;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
@@ -109,32 +110,30 @@ class WindController extends Controller
 
     }
 
+    //评论
+
     function api_get_comments($id){
-        //
+        $comments = Comment::all();
+        //搜索条件
+        return $comments;
     }
 
+    function api_get_json_comments(){
+
+        $comments = Comment::all();
+        return $comments;
+    }
+
+    //获取post的requset 有错
     function api_post_comments(Request $request){
-        $this->validate($request,['']);
-
-
-
-//        public function store(Request $request){
-//            $this->validate($request, ['title' => 'required|min:1', 'text' =>'required', 'category' => 'required']);
-//            $request['created_at'] = Carbon::now('Asia/Shanghai');
-//            $request['updated_at'] = Carbon::now('Asia/Shanghai');
-//            $tmp_data = $request['created_at'];
-//            $request['published_at'] = date('M.d Y',strtotime($tmp_data));
-//            //寻找 <!--more--> 字段
-//            $find_text = $request['text'];
-//            $replace_text = str_replace('&lt;!--more--&gt;','<!--more-->',$find_text);
-//            $request['text']= $replace_text;
-//            //完毕
-//            Article::create($request->all());
-//            return redirect('articles');
-//
-//
+        $this->validate($request,['author' => 'required|min:1', 'text' =>'required', 'mail' => 'required', 'url' => 'required']);
+        $tmp_date = Carbon::now('Asia/Shanghai');
+        $request['published'] = date('M.d Y',strtotime($tmp_date));
+        Comment::create($request->all());
+        return view('articles.article');
     }
 
+    //评论=======================================
 
 
     /**
@@ -161,15 +160,10 @@ class WindController extends Controller
     }
 
     public function code(){
-//        $articles = Article::latest('created_at')->get();
-//        return view('articles.code', compact('articles'));
         return view('articles.code');
     }
 
     public function daily(){
-        //$articles = Article::all();
-//        $articles = Article::latest('created_at')->get();
-//        return view('articles.daily', compact('articles'));
         return view('articles.daily');
     }
 

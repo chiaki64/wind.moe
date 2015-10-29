@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="am-container am-u-lg-8 am-u-md-9">
+
         <div id="add_more">
             <!--Breadcrumb-->
             <ol class="am-breadcrumb">
@@ -15,8 +16,13 @@
         <div style="margin-top:50px;">
             <p class="am-text-center" id="load_more"><a href="javascript:void(0)" class="am-text-lg" onclick="getArticleJson()">-Load More Article-</a></p>
         </div>
+        <div>
+
+
+
+        </div>
     </div>
-    @yield('sidebar')
+    {{--@yield('sidebar')--}}
 
 
 @stop
