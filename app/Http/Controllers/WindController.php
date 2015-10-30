@@ -113,18 +113,15 @@ class WindController extends Controller
     //评论
 
     function api_get_comments($id){
-        $comments = Comment::all();
+        $comments = Comment::latest('created_at')->whereBetween('pid', array($id, $id))->get();
         //搜索条件
         return $comments;
     }
 
     function api_get_json_comments(){
-
-        $comments = Comment::all();
-        return $comments;
+        //不需要
     }
 
-    //获取post的requset 有错
     function api_post_comments(Request $request){
 //        $this->validate($request,['author' => 'required|min:1', 'text' =>'required', 'mail' => 'required', 'url' => 'required','agent'=>'required','pid'=>'required' ]);
         $tmp_date = Carbon::now('Asia/Shanghai');

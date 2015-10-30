@@ -17,7 +17,8 @@ class Comment extends Model
         'url',
         'ip',
         'agent',
-        'published'
+        'published',
+        'mark'
     ];
 
 

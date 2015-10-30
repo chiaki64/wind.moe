@@ -283,26 +283,45 @@ function getBrowserInfo() {
     var regStr_ff = /firefox\/[\d.]+/gi
     var regStr_chrome = /chrome\/[\d.]+/gi;
     var regStr_saf = /safari\/[\d.]+/gi;
-    //IE
     if (agent.indexOf("msie") > 0) {
         return agent.match(regStr_ie);
     }
-
-    //firefox
     if (agent.indexOf("firefox") > 0) {
         return agent.match(regStr_ff);
     }
-
-    //Chrome
     if (agent.indexOf("chrome") > 0) {
-        return agent.match(regStr_chrome);
-    }
-
-    //Safari
+        return agent.match(regStr_chrome);}
     if (agent.indexOf("safari") > 0 && agent.indexOf("chrome") < 0) {
         return agent.match(regStr_saf);
     }
-
 }
+
+//get comments
+function wind_comments(article_id) {
+    $.getJSON("./api/comments/" + article_id, function (json) {
+        console.log(json);
+        $.each(json, function (index, domEle) {
+            console.log(domEle);
+            if (domEle != null) {
+                $("#comment_bar").html(function (index, oldHtml) {
+                    var text = "<li class=\"am-comment am-text-sm\"> <div><strong style=\"margin-right: 10px;\">";
+                    text += domEle.author;
+                    text += "</strong><small style=\"margin-right: 10px;\">>";
+                    text += domEle.published;
+                    text += "</small><small>"+domEle.mark;
+                    text +="</small></div><div><p  style=\"margin-bottom:0px;\">";
+                    text += domEle.text;
+                    text+= "</p></div></li>"
+                     
+                    var test = oldHtml + text;
+                    return test;
+                });
+            }
+
+        });
+    });
+};
+
+
 
 

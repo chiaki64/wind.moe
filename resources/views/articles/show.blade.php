@@ -35,44 +35,44 @@
             <hr data-am-widget="divider" style="" class="am-divider am-divider-default">
 
 
-            <ul class="am-comments-list am-comments-list-flip">
-                <li class="am-comment am-text-sm">
-                    <div>
-                        <strong>作者</strong>
-                        <small>Oct.21 2015 - 我是测试的自我介绍</small>
-                    </div>
-                    <div>
-                        <p  style="margin-bottom:0px;">
-                            加油 希望能写出更好的博客.
-                        </p>
-                    </div>
-                </li>
+            <ul class="am-comments-list am-comments-list-flip" id="comment_bar">
+                {{--<li class="am-comment am-text-sm">--}}
+                    {{--<div>--}}
+                        {{--<strong>作者</strong>--}}
+                        {{--<small>Oct.21 2015 - 我是测试的自我介绍</small>--}}
+                    {{--</div>--}}
+                    {{--<div>--}}
+                        {{--<p  style="margin-bottom:0px;">--}}
+                            {{--加油 希望能写出更好的博客.--}}
+                        {{--</p>--}}
+                    {{--</div>--}}
+                {{--</li>--}}
 
-                <li class="am-comment am-text-sm"  >
-                    <div>
-                        <strong>路人乙</strong>
-                        <small>Oct.21/15 - 阿西吧我是测试数据</small>
-                    </div>
-                    <div>
-                        <p  style="margin-bottom:0px;">
-                            凑足十五字就没有问问题了吧凑足十五字就没有问问题了吧
-                        </p>
-                    </div>
-                </li>
+                {{--<li class="am-comment am-text-sm"  >--}}
+                    {{--<div>--}}
+                        {{--<strong>路人乙</strong>--}}
+                        {{--<small>Oct.21/15 - 阿西吧我是测试数据</small>--}}
+                    {{--</div>--}}
+                    {{--<div>--}}
+                        {{--<p  style="margin-bottom:0px;">--}}
+                            {{--凑足十五字就没有问问题了吧凑足十五字就没有问问题了吧--}}
+                        {{--</p>--}}
+                    {{--</div>--}}
+                {{--</li>--}}
 
-                <li class="am-comment am-text-sm">
-                    <div>
-                        <strong>作者</strong>
-                        <small>Oct.21 2015 - 自我介绍</small>
-                    </div>
-                    <div>
-                        <p   style="margin-bottom:0px;">
-                            加油 希望能写出更好的博客.
-                        </p>
-                    </div>
+                {{--<li class="am-comment am-text-sm">--}}
+                    {{--<div>--}}
+                        {{--<strong>作者</strong>--}}
+                        {{--<small>Oct.21 2015 - 自我介绍</small>--}}
+                    {{--</div>--}}
+                    {{--<div>--}}
+                        {{--<p   style="margin-bottom:0px;">--}}
+                            {{--加油 希望能写出更好的博客.--}}
+                        {{--</p>--}}
+                    {{--</div>--}}
 
 
-                </li>
+                {{--</li>--}}
 
 
             </ul>
@@ -101,7 +101,13 @@
 
         <div class="form-group am-form-group" style="margin-bottom: 0px;">
             <div class="am-u-sm-12 am-u-md-8 am-u-lg-4" style="padding-left: 0px;">
-                {!! Form::text('url', null, ['class' => 'form-control am-input-sm','placeholder' => 'URL','style' => 'border:0px;background:#eee;']) !!}
+                {!! Form::text('mark', null, ['class' => 'form-control am-input-sm','placeholder' => '自我介绍『可选』','style' => 'border:0px;background:#eee;']) !!}
+            </div>
+        </div>
+
+        <div class="form-group am-form-group" style="margin-bottom: 0px;">
+            <div class="am-u-sm-12 am-u-md-8 am-u-lg-4" style="padding-left: 0px;">
+                {!! Form::text('url', null, ['class' => 'form-control am-input-sm','placeholder' => 'URL『可选』','style' => 'border:0px;background:#eee;']) !!}
             </div>
         </div>
 
@@ -133,6 +139,14 @@
         </div>
         {!! Form::close() !!}
         </div>
+
+        <script>
+            document.onreadystatechange = subSomething;
+            function subSomething() {
+                if(document.readyState == "complete")
+                    wind_comments({{ $article->id }})
+            }
+        </script>
 
 
 

@@ -41,7 +41,7 @@ Route::get('/search/api/search/{keyword}','WindController@api_search');
 Route::get('/api/random/article','WindController@api_random_article');
 
 //api comments
-Route::get('/api/comments/{id}','WindController@api_get_comments');
+Route::get('articles/api/comments/{id}','WindController@api_get_comments');
 Route::get('/comments', 'WindController@api_get_json_comments');
 Route::post('/comments', 'WindController@api_post_comments');
 //Route::resource('/comments', 'CommentsController');
