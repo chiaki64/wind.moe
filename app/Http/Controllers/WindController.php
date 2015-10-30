@@ -127,7 +127,8 @@ class WindController extends Controller
         $tmp_date = Carbon::now('Asia/Shanghai');
         $request['published'] = date('M.d Y',strtotime($tmp_date));
         Comment::create($request->all());
-        return redirect('articles');
+        return redirect()->back();
+//        return redirect('articles');
     }
 
     //评论=======================================
