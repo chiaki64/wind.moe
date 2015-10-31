@@ -141,14 +141,11 @@ class WindController extends Controller
 //清空注释
         //$articles = Article::all();
 //        return \Auth::user();
-
 //        $id = Article::max('id');
 //        $articles = Article::latest('created_at')->whereBetween('id', array($id-7, $id))->get();
 
         return view('articles.article');
-        //other way
-        //return view('articles.index')->with('articles', $articles);
-//        return view('articles.article');
+
     }
 
     public function essay(){
@@ -170,8 +167,6 @@ class WindController extends Controller
     }
 
     public function search(){
-//        $articles = Article::latest('created_at')->get();
-//        return view('articles.search', compact('articles'));
         return view('articles.search');
     }
 
@@ -232,8 +227,6 @@ class WindController extends Controller
     public function update($id, Request $request){
         $article = Article::findOrFail($id);
         $request['updated_at'] = Carbon::now('Asia/Shanghai');
-//        $tmp_data = $request['created_at'];
-//        $request['published_at'] = date('M.d Y',strtotime($tmp_data));
         //寻找 <!--more--> 字段
         $find_text = $request['text'];
         $replace_text = str_replace('&lt;!--more--&gt;','<!--more-->',$find_text);
