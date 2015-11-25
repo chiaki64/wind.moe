@@ -12,5 +12,30 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('admin.create');
 });
+
+
+//Article
+Route::get('/article','WindController@index');
+Route::get('/article/{id}','WindController@show');//加个限制
+Route::get('/articles/{category}','WindController@index');
+
+//Comment
+Route::get('/comment','WindController@index');
+Route::get('/comment/{id}','WindController@index');
+
+//User
+
+
+//Note
+Route::get('/note','WindController@index');
+
+//Manage
+Route::get('/manage/article','WindController@index');
+Route::post('/articles','WindController@store');
+Route::get('/manage/comment','WindController@index');
+Route::get('/manage/user','WindController@index');
+
+
+//Auth

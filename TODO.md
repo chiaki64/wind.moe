@@ -1,5 +1,5 @@
 1.SQL ½á¹¹
-
+http://www.jb51.net/article/56284.htm
 ---------------------------------------
 SQL Structure
 
