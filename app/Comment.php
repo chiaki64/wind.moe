@@ -19,6 +19,7 @@ class Comment extends Model
         'url',
         'ip',
         'agent',
-        'published',
+        'created_at',
+        'published_at',
     ];
 }

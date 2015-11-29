@@ -18,9 +18,11 @@ class CreateArticlesTable extends Migration
             $table->text('text');
             $table->string('author',30);
             $table->string('category',30);
-            $table->string('tags',50);
+//            $table->integer('category_id')->unsigned();;
+            $table->string('tags',50)->nullable();
             $table->timestamps();
             $table->string('published_at',30);
+
         });
     }
 

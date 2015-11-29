@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>WindCore</title>
-    <!--many meta-->
-    <meta name="mobile-web-app-capable" content="yes">
+    <title>Management - Wind</title>
+    <meta name="author" content="稗田千秋">
+    <meta name="keywords" content="稗田千秋,Hieda no Chiaki,forblackking,个人博客,blog,algorthim,acgn,code,daily,essay">
+    <meta name="description" content="">
+    <meta name="copyright" content="Hieda no Chiaki">
+    <meta name="generator" content="Brackets">
+    <!--Favicon icon-->
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
     <!-- Add to homescreen for Safari on iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="Material Design Lite">
-    <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
-
+    <meta name="mobile-web-app-capable" content="yes">
+    {{--<link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">--}}
     <!-- Tile icon for Win8 (144x144 + tile color) -->
     <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
     <meta name="msapplication-TileColor" content="#3372DF">
@@ -21,10 +27,17 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-    <link rel="stylesheet" href="/static/css/material.css">
+    {{--<link rel="stylesheet" href="../static/css/material.css">--}}
+    <link rel="stylesheet" href="https://dn-wind-moe.qbox.me/css/material.min.css">
     <!--  <link rel="stylesheet" href="./static/material-design-lite-master/templates/android-dot-com/styles.css">-->
-    <link rel="stylesheet" href="/static/css/wind.lime.css">
+    <link rel="stylesheet" href="https://dn-wind-moe.qbox.me/css/wind.lime.min.css">
+    {{--<link rel="stylesheet" href="/static/css/wind.lime.css">--}}
     <link rel="stylesheet" href="https://dn-wind-moe.qbox.me/css/simditor.css">
+    <style>
+        body::before{
+            background-image: url('https://dn-wind-moe.qbox.me/static/img/manage_back.jpg');
+        }
+    </style>
 </head>
 
 <body>
@@ -48,11 +61,11 @@
             <!-- Navigation -->
             <div class="wind-navigation-container">
                 <nav class="wind-navigation mdl-navigation">
-                    <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Essay</a>
-                    <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Code</a>
-                    <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Dialy</a>
-                    <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Algorithm</a>
-                    <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">ACGN</a>
+                    <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/">HomePage</a>
+                    <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/manage/articles">Article</a>
+                    <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/manage/article/create">Create</a>
+                    <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/manage/comments">Comment</a>
+                    <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/manege/config">Config</a>
                 </nav>
             </div>
 
@@ -73,17 +86,15 @@
 
     <div class="wind-drawer mdl-layout__drawer">
       <span class="mdl-layout-title">
-          <img class="drawer-avatar" src="./static/img/avatar.jpg">
+          <img class="drawer-avatar" src="/static/img/avatar.jpg">
           <h5  style="width:100%;margin-top:8px;text-align: center;">稗田千秋</h5>
           <p style="width:100%;text-align: center;">东方舰娘/伪前端/算法鶸<br>RPG MAKER/古典文学/代码洁癖</p>
         </span>
 
         <nav class="mdl-navigation">
-            <a class="mdl-navigation__link" href="">Essay</a>
-            <a class="mdl-navigation__link" href="">Code</a>
-            <a class="mdl-navigation__link" href="">Dialy</a>
-            <a class="mdl-navigation__link" href="">Algorithm</a>
-            <a class="mdl-navigation__link" href="">ACGN</a>
+            <a class="mdl-navigation__link" href="">Article</a>
+            <a class="mdl-navigation__link" href="">Comment</a>
+            <a class="mdl-navigation__link" href="">Config</a>
 
             <div class="drawer-separator"></div>
             <a class="mdl-navigation__link" href="">Inventory</a>
@@ -103,10 +114,7 @@
             <div style="width: 5%;margin:100px auto 0 auto;">
                 <div class="mdl-spinner mdl-js-spinner is-active"></div>
             </div>
-
         </div>
-
-
         <footer class="mdl-mini-footer">
 
             <div class="footer-default mdl-mini-footer">
@@ -117,15 +125,6 @@
             </div>
         </footer>
     </div>
-
-
-
-
-
-
-
-
-
 </div>
 <script src="/static/js/material.js"></script>
 <script type="text/javascript" src="https://dn-wind-moe.qbox.me/js/jquery-2.1.4.min.js"></script>

@@ -15,16 +15,21 @@ class Article extends Model
         'author',
         'category',
         'tags',
+        'created_at',
         'updated_at',
         'published_at',
     ];
 
-    public function setPublishedAtAttribute($date){
-        $this->attributes['published_at'] = Carbon::parse($date);
-    }
+//    public function setPublishedAtAttribute($date){
+//        $this->attributes['updated_at'] = Carbon::createFromFormat('Y-m-d', $date);
+//    }
 
     public function scopePublished($query){
-        $query->where('created_at', '<=', Carbon::now());
+        $query->where('created_at', '<=', Carbon::now('Asia/Shanghai'));
+    }
+
+    public function category(){
+        return $this->belongsTo('App\Category');
     }
 
 }

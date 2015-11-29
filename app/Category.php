@@ -12,4 +12,8 @@ class Category extends Model
         'category',
         'ArticleNumber',
     ];
+
+    public function articles(){
+        return $this->hasMany('App\Article');
+    }
 }

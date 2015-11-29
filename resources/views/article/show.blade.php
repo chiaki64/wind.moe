@@ -8,8 +8,17 @@
         <hr>
         <div>
             {!! $article->text !!}
-            <div><a href="#">Continued Reading...</a></div>
         </div>
     </div>
+
+    @include('article.comment')
+
+    <script>
+        document.onreadystatechange = subSomething;
+        function subSomething() {
+            if(document.readyState == "complete")
+                wind_comments({{ $article->id }})
+        }
+    </script>
 
 @stop

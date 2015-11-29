@@ -17,18 +17,32 @@ p {
   font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", FontAwesome, sans-serif;
 }
 
-/*p  {*/
+font {
+  width: 100%;
+}
+
+p {
   /*text-indent:2em;*/
-/*}*/
+}
 
-li > a  p {
-  text-indent:0;
+.mdl-textfield__input {
+  color: #333;
+}
 
+ul p,
+ul strong,
+ul small {
+  color: #333;
+  text-indent: 0;
+}
+
+li > a p {
+  text-indent: 0;
 }
 
 ::selection {
-    background-color: #6ab344;
-    color: #fff;
+  background-color: #6ab344;
+  color: #fff;
 }
 
 body::before {
@@ -59,7 +73,8 @@ h6 {
 a,
 ins {
   text-decoration: none;
-/*  color: #0e90d2;*/
+  /*  color: #0e90d2;*/
+  
   color: #6ab344;
 }
 
@@ -73,7 +88,7 @@ ins {
 @media (min-width: 513px) and (max-width: 1024px) and (min-resolution: 1.5dppx),
 (min-width: 1025px) and (max-width: 2048px) and (max-resolution: 1.5dppx) {
   body::before {
-    background-image: url('../img/back.jpg');
+    background-image: url('../img/back.png');
   }
 }
 
@@ -84,7 +99,7 @@ ins {
   }
 }
 
-@media (min-width: 2049px)  {
+@media (min-width: 2049px) {
   body::before {
     background-image: url('../img/back.jpg');
   }
@@ -267,11 +282,8 @@ div {
 }
 
 .mdl-layout__header {
-  height:56px;
+  height: 56px;
 }
-
-
-
 /*Search Box*/
 
 .search-box {
@@ -385,8 +397,8 @@ div {
 
 .container {
   /*    max-width: 1600px; */
+  /*  max-width: 1900px;*/
   
-/*  max-width: 1900px;*/
   width: calc(100% - 16px);
   margin: 0 0 0 auto;
   padding-bottom: 0;
@@ -447,11 +459,12 @@ div {
   opacity: 0.8;
   border-radius: 2px;
   padding: 0 0 40px 0;
-/*
+  /*
   margin-bottom: 80px;
   margin-left: auto;
   margin-right: auto;
 */
+  
   margin: 30px auto 80px auto;
 }
 
@@ -473,17 +486,13 @@ div {
   }
 }
 
-
-
-
-
 .card {
   /*    opacity: 0.8;*/
   /*  border-radius: 2px;*/
   
   padding: 20px 30px 40px 30px;
   margin-bottom: 40px;
-  color: rgb(66, 66, 66) !important;
+  color: rgb(44, 44, 44) !important;
   background-color: rgb(255, 255, 255) !important;
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
 }
@@ -616,6 +625,7 @@ hr {
   -webkit-margin-start: 0px;
   -webkit-margin-end: 0px;
   -webkit-padding-start: 40px;
+  background-color: rgb(255, 255, 255) !important;
 }
 
 .links li {

@@ -15,15 +15,15 @@ class CreateCommentsTable extends Migration
         Schema::create('wind_comments', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('pid');
-            $table->string('parent');
+            $table->string('parent')->nullable();
             $table->string('author',50);
-            $table->integer('authorID');
-            $table->integer('ownerID');
+            $table->integer('authorID')->nullable();
+            $table->integer('ownerID')->nullable();
             $table->text('text');
-            $table->string('email',40);
-            $table->string('url',40);
-            $table->string('ip',40);
-            $table->string('agent');
+            $table->string('email',40)->nullable();
+            $table->string('url',40)->nullable();
+            $table->string('ip',40)->nullable();
+            $table->string('agent')->nullable();
             $table->timestamp('created_at');
             $table->string('published_at',30);
         });

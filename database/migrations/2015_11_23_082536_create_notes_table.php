@@ -16,7 +16,7 @@ class CreateNotesTable extends Migration
             $table->increments('id');
             $table->text('text');
             $table->string('author',30);
-            $table->string('tags',50);
+            $table->string('tags',50)->nullable();
             $table->timestamp('created_at');
             $table->string('published_at',30);
         });
