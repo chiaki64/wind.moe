@@ -62,12 +62,10 @@ class FunctionController extends Controller
             $article['text']=(string)$str[0];
         }
 
-//        return view('article.search', compact('articles'));
         if($articles['1']==null)
             return view('errors.search_404');
         else
             return view('article.search', compact('articles'));
-//        return $articles;
     }
 	
 	
@@ -76,9 +74,10 @@ class FunctionController extends Controller
         $items = "";
         $articles = Article::latest('created_at')->published()->get();//->take(10)
         foreach($articles as $article){
+
 //            $str = explode('__more__',$article['text']);
 //            $article['text']=(string)$str[0];
-            //To rss item data
+
             $title = "<title><![CDATA[".$article['title']."]]></title>";
             $description = "<description><![CDATA[".$article['text']."]]></description>";
             $author = "<author><![CDATA[".$article['author']."]]></author>";
@@ -97,16 +96,10 @@ class FunctionController extends Controller
 
         $rss = "<?xml version=\"1.0\" encoding=\"utf-8\" ?>".
             "<rss version=\"2.0\" xmlns:content=\"http://purl.org/rss/1.0/modules/content/\" xmlns:wfw=\"http://wellformedweb.org/CommentAPI/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">".
-            "<channel>".
-                "{$channel}".
-            "</channel>".
-            "</rss>";
+            "<channel>"."{$channel}"."</channel>"."</rss>";
 
 		return \Response::make($rss, 200, ['Content-Type' => 'text/xml']);
-//		return response($articles,200);//->header('Content-Type','text/xml')
-//		return $articles;
-		
-		
+
 	}
 
 
