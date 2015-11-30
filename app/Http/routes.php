@@ -34,7 +34,7 @@ Route::get('/manage/article/create', 'WindController@create');
 Route::post('/articles','WindController@store');
 Route::resource('/manage/article', 'WindController');
 Route::get('/manage/articles','WindController@manageArticle');
-//Route::get('/manage/comment','WindController@index');
+Route::get('/manage/comments','WindController@manageComment');
 //Route::get('/manage/user','WindController@index');
 
 
@@ -47,11 +47,15 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 //Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 //Search
-Route::get('/search', 'WindController@search');
+Route::get('/search', 'FunctionController@search');
 
 //Static
-Route::get('/links', 'WindController@links');
-Route::get('/about', 'WindController@about');
+Route::get('/links', 'StaticController@links');
+Route::get('/about', 'StaticController@about');
 
 //Status
 Route::get('/api/v2/status','StatusController@status');
+
+//RSS Feed
+Route::get('/feed','FunctionController@feed');
+Route::get('/feeds','FunctionController@feed');

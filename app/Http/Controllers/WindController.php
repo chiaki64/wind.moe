@@ -112,60 +112,24 @@ class WindController extends Controller
         return $comments;
     }
 
-
-    public function search(){
-        $key = Input::get('key');
-        $id = Article::max('id');
-        for($cnt=1;$id>0;$id--){
-            $article = Article::find($id);
-            if(stripos($article['title'],$key) || stripos($article['text'],$key)){
-                $articles[$cnt]=$article;
-                $cnt++;
-            }else if(stristr($article['tags'],$key)){
-                $articles[$cnt]=$article;
-                $cnt++;
-            }
-            if($id==1 && $cnt==1)
-                $articles[$cnt]=null;
-        }
-
-        foreach ($articles as $article){
-            $str = explode('__more__',$article['text']);
-            $article['text']=(string)$str[0];
-        }
-
-//        return view('article.search', compact('articles'));
-        if($articles['1']==null)
-            return view('errors.search_404');
-        else
-            return view('article.search', compact('articles'));
-//        return $articles;
-    }
-
-
     public function manageArticle(){
         $articles = Article::latest('created_at')->get();
-
         return view('admin.articles',compact('articles'));
     }
 
+    public function manageComment(){
+        $comments = Comment::latest('created_at')->get();
+        return view('admin.comment',compact('comments'));
+    }
 
+    public function manageConfig(){
+        return view('admin.config');
+    }
 
     //Note
     public function note(){
         $notes = Note::latest('created_at')->get();
-
         return view('article.note',compact('notes'));
     }
-
-    //Static
-    public function links(){
-        return view('static.links');
-    }
-
-    public function about(){
-        return view('static.about');
-    }
-
 
 }

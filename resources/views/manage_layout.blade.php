@@ -34,13 +34,16 @@
     {{--<link rel="stylesheet" href="/static/css/wind.lime.css">--}}
     <link rel="stylesheet" href="https://dn-wind-moe.qbox.me/css/simditor.css">
     <style>
-        body::before{
+        .background::before{
             background-image: url('https://dn-wind-moe.qbox.me/static/img/manage_back.jpg');
+        }
+        .background-night::before{
+            background-image: url('https://dn-wind-moe.qbox.me/static/img/manage-background-night.jpg');
         }
     </style>
 </head>
 
-<body>
+<body class="background">
 <div class="layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
     <header class="header mdl-layout__header mdl-layout__header--waterfall">
@@ -133,6 +136,10 @@
 <script type="text/javascript" src="https://dn-wind-moe.qbox.me/js/uploader.min.js"></script>
 <script type="text/javascript" src="https://dn-wind-moe.qbox.me/js/simditor.min.js"></script>
 <script type="text/javascript" src="/static/js/wind.moe.js"></script>
+
+<script>
+    var now=new Date;hour=now.getHours();var ele=document.getElementsByTagName("body")[0];hour>=18||6>=hour?(ele.className="background-night",console.log("夜间了,请注意休息 ^_^")):ele.className="background"
+</script>
 </body>
 
 </html>

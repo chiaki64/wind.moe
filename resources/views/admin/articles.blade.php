@@ -13,8 +13,5 @@
     @endforeach
     </div>
 
-    <script>
-
-    </script>
 
 @stop
